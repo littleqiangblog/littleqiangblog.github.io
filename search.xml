@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Activity 的几种启动模式</title>
+    <url>/2016/01/02/Activity-%E7%9A%84%E5%87%A0%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p>Activity 的启动模式</p>
+<p>android:launchMode</p>
+<pre><code>  &lt;application
+    android:name=&quot;&quot;
+    android:label=&quot;&quot;
+    android:launchMode=&quot;standard&quot;&gt;
+    ...
+&lt;/application&gt;
+</code></pre>
+<span id="more"></span>
+<h2 id="standard-启动模式（默认的）"><a href="#standard-启动模式（默认的）" class="headerlink" title="standard 启动模式（默认的）:"></a>standard 启动模式（默认的）:</h2><p>就是最普通的，在当前栈中先进后出</p>
+<h2 id="SingleTop-启动模式："><a href="#SingleTop-启动模式：" class="headerlink" title="SingleTop 启动模式："></a>SingleTop 启动模式：</h2><p>如果当前栈中的启动模式为SingleTop的activity在当前的栈顶，则再启动是，不会改变当前activity实例。<br>如果没有在栈顶，就会新创建一个activity实例在栈顶。</p>
+<p>始终保持模式为SingleTop的activity在当前栈顶部。</p>
+<h2 id="SingleTask-启动模式："><a href="#SingleTask-启动模式：" class="headerlink" title="SingleTask 启动模式："></a>SingleTask 启动模式：</h2><p>当启动这个activity时会把它上面的activity都弹出。</p>
+<p>在当前栈中每个模式为SingleTask的activity有且只有一个实例</p>
+<h2 id="SingleInstance-启动模式："><a href="#SingleInstance-启动模式：" class="headerlink" title="SingleInstance 启动模式："></a>SingleInstance 启动模式：</h2><p>如果启动模式为SingleInstance的activity，会在一个新的任务栈中创建此activity的实例。</p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo使用</title>
+    <url>/2023/03/28/Hexo%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="hexo常用指令"><a href="#hexo常用指令" class="headerlink" title="hexo常用指令"></a>hexo常用指令</h1><h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">init</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。<span id="more"></span></p>
+<h3 id="new"><a href="#new" class="headerlink" title="new"></a>new</h3><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> [layout] &lt;<span class="built_in">title</span>&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">hexo <span class="built_in">new</span> <span class="string">&quot;post title with whitespace&quot;</span></span><br><span class="line"></span><br><span class="line">hexo <span class="built_in">new</span> page --path about/<span class="keyword">me</span> <span class="string">&quot;About me&quot;</span></span><br><span class="line"></span><br><span class="line">hexo <span class="built_in">new</span> page --path about/<span class="keyword">me</span></span><br><span class="line"></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p, –path</td>
+<td>自定义新文章的路径</td>
+</tr>
+<tr>
+<td>-r, –replace</td>
+<td>如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td>-s, –slug</td>
+<td>文章的Slug，作为新文章的文件名和发布后的URL</td>
+</tr>
+</tbody></table>
+<h3 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h3><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">generate</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d, –deploy</td>
+<td>文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td>-w, –watch</td>
+<td>监视文件变动</td>
+</tr>
+<tr>
+<td>-b, –bail</td>
+<td>生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td>-f, –force</td>
+<td>强制生成文件，Hexo 引入了差分机制，如果 public 目录存在，那么 hexo g 只会重新生成改动的文件。使用该参数的效果接近 hexo clean &amp;&amp; hexo generate</td>
+</tr>
+<tr>
+<td>-c, –concurrency</td>
+<td>最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<h3 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">hexo publish [layout] <span class="tag">&lt;<span class="name">filename</span>&gt;</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>发表草稿。</p>
+<h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/。</code></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p, –port</td>
+<td>重设端口</td>
+</tr>
+<tr>
+<td>-s, –static</td>
+<td>只使用静态文件</td>
+</tr>
+<tr>
+<td>-l, –log</td>
+<td>启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h3><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">deploy</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>部署网站。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-g，–generate</td>
+<td>部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h3><figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">hexo <span class="built_in">clean</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo分类和标签</title>
+    <url>/2023/03/28/Hexo%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>生成的新文件夹都在source下也就是和放文章的文件夹一块<br>以下所有命令都是在博客文件目录下执行</p>
+</blockquote>
+<h4 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h4><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
+<pre><code>$ hexo new page 
+</code></pre>
+<p>categories复制代码categories文件夹下会有index.md这个文件，打开后默认内容是这样的：<span id="more"></span></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-04-22 14:47:40</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">分类</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-04-24 15:30:30</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">categories</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。<br>给文章添加“categories”属性<br>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span> <span class="string">添加分类及标签</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017-05-26 12:12:57</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了categories: xxx的文章才会被收录到首页的“分类”中。<br>2. 创建“标签”选项<br>    生成“标签”页并添加tpye属性</p>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> <span class="type">page</span> tags</span><br></pre></td></tr></table></figure>
+
+<p>复制代码在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">标签</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-04-22 14:22:08</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">标签</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-04-24 15:40:24</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。<br>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span> <span class="string">添加分类及标签</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-04-24 15:40:24</span></span><br><span class="line"><span class="attr">categories:</span> </span><br><span class="line">           <span class="bullet">-</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">           <span class="bullet">-</span> <span class="string">博客</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux crontab命令</title>
+    <url>/2016/11/22/Linux-crontab%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="Linux-crontab命令"><a href="#Linux-crontab命令" class="headerlink" title="Linux crontab命令"></a>Linux crontab命令</h1><p> crontab命令选项:</p>
+<pre><code>     -u指定一个用户
+     -l列出某个用户的任务计划
+     -r删除某个用户的任务
+     -e编辑某个用户的任务
+</code></pre>
+<p> cron文件语法:</p>
+<pre><code>      分     小时    日       月       星期     命令
+      0-59   0-23   1-31   1-12     0-6     command     (取值范围,0表示周日一般一行对应一个任务)
+     记住几个特殊符号的含义:
+         “*”代表取值范围内的数字,
+         “/”代表”每”,
+         “-”代表从某个数字到某个数字,
+         “,”分开几个离散的数字
+</code></pre>
+<p> 任务调度设置文件的写法<span id="more"></span></p>
+<pre><code>      可用crontab -e命令来编辑,编辑的是/var/spool/cron下对应用户的cron文件,也可以直接修改/etc/crontab文件
+     具体格式如下：
+      Minute Hour Day Month Dayofweek   command
+      分钟     小时   天     月       天每星期       命令
+     每个字段代表的含义如下：
+     Minute             每个小时的第几分钟执行该任务
+     Hour               每天的第几个小时执行该任务
+     Day                 每月的第几天执行该任务
+     Month             每年的第几个月执行该任务
+     DayOfWeek     每周的第几天执行该任务
+     Command       指定要执行的程序
+     在这些字段里，除了“Command”是每次都必须指定的字段以外，其它字段皆为可选
+    字段，可视需要决定。对于不指定的字段，要用“*”来填补其位置。
+    举例如下：
+    5       *       *           *     *     ls             指定每小时的第5分钟执行一次ls命令
+    30     5       *           *     *     ls             指定每天的 5:30 执行ls命令
+    30     7       8         *     *     ls             指定每月8号的7：30分执行ls命令
+    30     5       8         6     *     ls             指定每年的6月8日5：30执行ls命令
+    30     6       *           *     0     ls             指定每星期日的6:30执行ls命令[注：0表示星期天，1表示星期1，
+    以此类推，也可以用英文来表示，sun表示星期天，mon表示星期一等。]
+   30     3     10,20     *     *     ls     每月10号及20号的3：30执行ls命令[注：“，”用来连接多个不连续的时段]
+    25     8-11 *           *     *     ls       每天8-11点的第25分钟执行ls命令[注：“-”用来连接连续的时段]
+    */15   *       *           *     *     ls         每15分钟执行一次ls命令 [即每个小时的第0 15 30 45 60分钟执行ls命令 ]
+     30   6     */10         *     *     ls       每个月中，每隔10天6:30执行一次ls命令[即每月的1、11、21、31日是的6：30执行一次ls 命令。 ]
+     每天7：50以root 身份执行/etc/cron.daily目录中的所有可执行文件
+     50   7       *             *     *     root     run-parts     /etc/cron.daily   [ 注：run-parts参数表示，执行后面目录中的所有可执行文件。 ]
+</code></pre>
+<p> </p>
+<p> 新增调度任务</p>
+<p>     新增调度任务可用两种方法：</p>
+<pre><code> 1)、在命令行输入: crontab -e 然后添加相应的任务，wq存盘退出。
+ 2)、直接编辑/etc/crontab 文件，即vi /etc/crontab，添加相应的任务。
+</code></pre>
+<p> 查看调度任务</p>
+<pre><code>     crontab -l //列出当前的所有调度任务
+     crontab -l -u jp   //列出用户jp的所有调度任务
+</code></pre>
+<p> 删除任务调度工作</p>
+<pre><code>    crontab -r   //删除所有任务调度工作
+</code></pre>
+<p> 任务调度执行结果的转向</p>
+<pre><code>例1：每天5：30执行ls命令，并把结果输出到/jp/test文件中
+        	30 5 * * * ls &gt;/jp/test 2&gt;&amp;1
+注：2&gt;&amp;1 表示执行结果及错误信息。
+</code></pre>
+<p> 编辑&#x2F;etc&#x2F;crontab 文件配置cron  </p>
+<p>cron服务每分钟不仅要读一次&#x2F;var&#x2F;spool&#x2F;cron内的所有文件，还需要读一次 &#x2F;etc&#x2F;crontab,因此我们配置这个文件也能运用cron服务做一些事情。用crontab配置是针对某个用户的，而编辑&#x2F;etc&#x2F;crontab是针对系统的任务。<br>此文件的文件格式是:  </p>
+<pre><code>　　SHELL=/bin/bash  
+　　PATH=/sbin:/bin:/usr/sbin:/usr/bin 
+　　MAILTO=root //如果出现错误，或者有数据输出，数据作为邮件发给这个帐号  
+　　HOME=/ //使用者运行的路径,这里是根目录  
+　　# run-parts  
+　 01   *   *   *   *     root run-parts /etc/cron.hourly         //每小时执行/etc/cron.hourly内的脚本  
+　 02   4   *   *   *     root run-parts /etc/cron.daily           //每天执行/etc/cron.daily内的脚本  
+   22   4   *   *   0     root run-parts /etc/cron.weekly       //每星期执行 /etc/cron.weekly内的脚本  
+   42   4   1   *   *     root run-parts /etc/cron.monthly     //每月去执行/etc/cron.monthly内的脚本  
+　 大家注意”run-parts”这个参数了，如果去掉这个参数的话，后面就可以写要运行的某个脚本名，而不是文件夹名了
+    例如：
+     1) 在命令行输入: crontab -e 然后添加相应的任务，wq存盘退出。
+     2)直接编辑/etc/crontab 文件，即vi /etc/crontab，添加相应的任务
+          11 2 21 10 * rm -rf /mnt/fb  
+</code></pre>
+<p>原文地址：<a href="http://qa.taobao.com/?p=9189">http://qa.taobao.com/?p=9189</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Log4j笔记</title>
+    <url>/2016/06/07/Log4j%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Log4j笔记"><a href="#Log4j笔记" class="headerlink" title="Log4j笔记"></a>Log4j笔记</h1><p>一、Log4j简介</p>
+<p>Log4j有三个主要的组件：Loggers(记录器)，Appenders (输出源)和Layouts(布局)。这里可简单理解为日志类别，日志要输出的地方和日志以何种形式输出。综合使用这三个组件可以轻松地记录信息的类型和级别，并可以在运行时控制日志输出的样式和位置。</p>
+<span id="more"></span>
+<p>1、Loggers</p>
+<p>Loggers组件在此系统中被分为五个级别：DEBUG、INFO、WARN、ERROR和FATAL。这五个级别是有顺序的，DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL，分别用来指定这条日志信息的重要程度，明白这一点很重要，Log4j有一个规则：只输出级别不低于设定级别的日志信息，假设Loggers级别设定为INFO，则INFO、WARN、ERROR和FATAL级别的日志信息都会输出，而级别比INFO低的DEBUG则不会输出。</p>
+<p>2、Appenders</p>
+<p>禁用和使用日志请求只是Log4j的基本功能，Log4j日志系统还提供许多强大的功能，比如允许把日志输出到不同的地方，如控制台（Console）、文件（Files）等，可以根据天数或者文件大小产生新的文件，可以以流的形式发送到其它地方等等。</p>
+<p>常使用的类如下：</p>
+<pre><code>org.apache.log4j.ConsoleAppender（控制台）
+org.apache.log4j.FileAppender（文件）
+org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件）
+org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）
+org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
+</code></pre>
+<p>配置模式：</p>
+<pre><code>log4j.appender.appenderName = className
+log4j.appender.appenderName.Option1 = value1
+…
+log4j.appender.appenderName.OptionN = valueN
+</code></pre>
+<p>3、Layouts</p>
+<p>有时用户希望根据自己的喜好格式化自己的日志输出，Log4j可以在Appenders的后面附加Layouts来完成这个功能。Layouts提供四种日志输出样式，如根据HTML样式、自由指定样式、包含日志级别与信息的样式和包含日志时间、线程、类别等信息的样式。</p>
+<p>常使用的类如下：</p>
+<pre><code>org.apache.log4j.HTMLLayout（以HTML表格形式布局）
+org.apache.log4j.PatternLayout（可以灵活地指定布局模式）
+org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串）
+org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等信息）
+</code></pre>
+<p>配置模式：</p>
+<pre><code>log4j.appender.appenderName.layout =className
+log4j.appender.appenderName.layout.Option1 = value1
+…
+log4j.appender.appenderName.layout.OptionN = valueN
+</code></pre>
+<p>二、配置详解</p>
+<p>在实际应用中，要使Log4j在系统中运行须事先设定配置文件。配置文件事实上也就是对Logger、Appender及Layout进行相应设定。 Log4j支持两种配置文件格式，一种是XML格式的文件，一种是properties属性文件。下面以properties属性文件为例介绍 log4j.properties的配置。</p>
+<p>1、配置根Logger：</p>
+<pre><code>log4j.rootLogger = [ level ] , appenderName1, appenderName2, …
+log4j.additivity.org.apache=false：表示Logger不会在父Logger的appender里输出，默认为true。
+level ：设定日志记录的最低级别，可设的值有OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL或者自定义的级别，Log4j建议只使用中间四个级别。通过在这里设定级别，您可以控制应用程序中相应级别的日志信息的开关，比如在这里设定了INFO级别，则应用程序中所有DEBUG级别的日志信息将不会被打印出来。
+appenderName：就是指定日志信息要输出到哪里。可以同时指定多个输出目的地，用逗号隔开。
+</code></pre>
+<p>例如：log4j.rootLogger＝INFO,A1,B2,C3</p>
+<p>2、配置日志信息输出目的地（appender）：<br>log4j.appender.appenderName &#x3D; className<br>appenderName：自定义appderName，在log4j.rootLogger设置中使用；<br>className：可设值如下：</p>
+<pre><code>(1)org.apache.log4j.ConsoleAppender（控制台）
+(2)org.apache.log4j.FileAppender（文件）
+(3)org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件）
+(4)org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）
+(5)org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
+</code></pre>
+<p>(1)ConsoleAppender选项：</p>
+<pre><code>Threshold=WARN：指定日志信息的最低输出级别，默认为DEBUG。
+ImmediateFlush=true：表示所有消息都会被立即输出，设为false则不输出，默认值是true。
+Target=System.err：默认值是System.out。
+</code></pre>
+<p>(2)FileAppender选项：</p>
+<pre><code>Threshold=WARN：指定日志信息的最低输出级别，默认为DEBUG。
+ImmediateFlush=true：表示所有消息都会被立即输出，设为false则不输出，默认值是true。
+Append=false：true表示消息增加到指定文件中，false则将消息覆盖指定的文件内容，默认值是true。
+File=D:/logs/logging.log4j：指定消息输出到logging.log4j文件中。
+</code></pre>
+<p>(3)DailyRollingFileAppender选项：</p>
+<pre><code>Threshold=WARN：指定日志信息的最低输出级别，默认为DEBUG。
+ImmediateFlush=true：表示所有消息都会被立即输出，设为false则不输出，默认值是true。
+Append=false：true表示消息增加到指定文件中，false则将消息覆盖指定的文件内容，默认值是true。
+File=D:/logs/logging.log4j：指定当前消息输出到logging.log4j文件中。
+DatePattern=&#39;.&#39;yyyy-MM：每月滚动一次日志文件，即每月产生一个新的日志文件。当前月的日志文件名为logging.log4j，前一个月的日志文件名为logging.log4j.yyyy-MM。
+</code></pre>
+<p>另外，也可以指定按周、天、时、分等来滚动日志文件，对应的格式如下：</p>
+<pre><code>1)&#39;.&#39;yyyy-MM：每月
+2)&#39;.&#39;yyyy-ww：每周
+3)&#39;.&#39;yyyy-MM-dd：每天
+4)&#39;.&#39;yyyy-MM-dd-a：每天两次
+5)&#39;.&#39;yyyy-MM-dd-HH：每小时
+6)&#39;.&#39;yyyy-MM-dd-HH-mm：每分钟
+</code></pre>
+<p>(4)RollingFileAppender选项：</p>
+<pre><code>Threshold=WARN：指定日志信息的最低输出级别，默认为DEBUG。
+ImmediateFlush=true：表示所有消息都会被立即输出，设为false则不输出，默认值是true。
+Append=false：true表示消息增加到指定文件中，false则将消息覆盖指定的文件内容，默认值是true。
+File=D:/logs/logging.log4j：指定消息输出到logging.log4j文件中。
+MaxFileSize=100KB：后缀可以是KB, MB 或者GB。在日志文件到达该大小时，将会自动滚动，即将原来的内容移到logging.log4j.1文件中。
+MaxBackupIndex=2：指定可以产生的滚动文件的最大数，例如，设为2则可以产生logging.log4j.1，logging.log4j.2两个滚动文件和一个logging.log4j文件。
+</code></pre>
+<p>3、配置日志信息的输出格式（Layout）：<br>log4j.appender.appenderName.layout&#x3D;className<br>className：可设值如下：</p>
+<pre><code>(1)org.apache.log4j.HTMLLayout（以HTML表格形式布局）
+(2)org.apache.log4j.PatternLayout（可以灵活地指定布局模式）
+(3)org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串）
+(4)org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）
+</code></pre>
+<p>(1)HTMLLayout选项：</p>
+<pre><code>LocationInfo=true：输出java文件名称和行号，默认值是false。
+Title=My Logging： 默认值是Log4J Log Messages。
+</code></pre>
+<p>(2)PatternLayout选项：</p>
+<pre><code>ConversionPattern=%m%n：设定以怎样的格式显示消息。
+</code></pre>
+<p>格式化符号说明：</p>
+<pre><code>%p：输出日志信息的优先级，即DEBUG，INFO，WARN，ERROR，FATAL。
+%d：输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，如：%d&#123;yyyy/MM/dd HH:mm:ss,SSS&#125;。
+%r：输出自应用程序启动到输出该log信息耗费的毫秒数。
+%t：输出产生该日志事件的线程名。
+%l：输出日志事件的发生位置，相当于%c.%M(%F:%L)的组合，包括类全名、方法、文件名以及在代码中的行数。例如：test.TestLog4j.main(TestLog4j.java:10)。
+%c：输出日志信息所属的类目，通常就是所在类的全名。
+%M：输出产生日志信息的方法名。
+%F：输出日志消息产生时所在的文件名称。
+%L:：输出代码中的行号。
+%m:：输出代码中指定的具体日志信息。
+%n：输出一个回车换行符，Windows平台为&quot;\r\n&quot;，Unix平台为&quot;\n&quot;。
+%x：输出和当前线程相关联的NDC(嵌套诊断环境)，尤其用到像java servlets这样的多客户多线程的应用中。
+%%：输出一个&quot;%&quot;字符。
+</code></pre>
+<p>另外，还可以在%与格式字符之间加上修饰符来控制其最小长度、最大长度、和文本的对齐方式。如：</p>
+<pre><code>1) c：指定输出category的名称，最小的长度是20，如果category的名称长度小于20的话，默认的情况下右对齐。
+2)%-20c：&quot;-&quot;号表示左对齐。
+3)%.30c：指定输出category的名称，最大的长度是30，如果category的名称长度大于30的话，就会将左边多出的字符截掉，但小于30的话也不会补空格。
+</code></pre>
+<p>附：Log4j比较全面的配置</p>
+<p>Log4j配置文件实现了输出到控制台、文件、回滚文件、发送日志邮件、输出到数据库日志表、自定义标签等全套功能。<br>log4j.rootLogger&#x3D;DEBUG,console,dailyFile,im<br>log4j.additivity.org.apache&#x3D;true</p>
+<h1 id="控制台-console"><a href="#控制台-console" class="headerlink" title="控制台(console)"></a>控制台(console)</h1><pre><code>log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.Threshold=DEBUG
+log4j.appender.console.ImmediateFlush=true
+log4j.appender.console.Target=System.err
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<h1 id="日志文件-logFile"><a href="#日志文件-logFile" class="headerlink" title="日志文件(logFile)"></a>日志文件(logFile)</h1><pre><code>log4j.appender.logFile=org.apache.log4j.FileAppender
+log4j.appender.logFile.Threshold=DEBUG
+log4j.appender.logFile.ImmediateFlush=true
+log4j.appender.logFile.Append=true
+log4j.appender.logFile.File=D:/logs/log.log4j
+log4j.appender.logFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logFile.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<h1 id="回滚文件-rollingFile"><a href="#回滚文件-rollingFile" class="headerlink" title="回滚文件(rollingFile)"></a>回滚文件(rollingFile)</h1><pre><code>log4j.appender.rollingFile=org.apache.log4j.RollingFileAppender
+log4j.appender.rollingFile.Threshold=DEBUG
+log4j.appender.rollingFile.ImmediateFlush=true
+log4j.appender.rollingFile.Append=true
+log4j.appender.rollingFile.File=D:/logs/log.log4j
+log4j.appender.rollingFile.MaxFileSize=200KB
+log4j.appender.rollingFile.MaxBackupIndex=50
+log4j.appender.rollingFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.rollingFile.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<h1 id="定期回滚日志文件-dailyFile"><a href="#定期回滚日志文件-dailyFile" class="headerlink" title="定期回滚日志文件(dailyFile)"></a>定期回滚日志文件(dailyFile)</h1><pre><code>log4j.appender.dailyFile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.dailyFile.Threshold=DEBUG
+log4j.appender.dailyFile.ImmediateFlush=true
+log4j.appender.dailyFile.Append=true
+log4j.appender.dailyFile.File=D:/logs/log.log4j
+log4j.appender.dailyFile.DatePattern=&#39;.&#39;yyyy-MM-dd
+log4j.appender.dailyFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.dailyFile.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<h1 id="应用于socket"><a href="#应用于socket" class="headerlink" title="应用于socket"></a>应用于socket</h1><pre><code>log4j.appender.socket=org.apache.log4j.RollingFileAppender
+log4j.appender.socket.RemoteHost=localhost
+log4j.appender.socket.Port=5001
+log4j.appender.socket.LocationInfo=true
+</code></pre>
+<h1 id="Set-up-for-Log-Factor-5"><a href="#Set-up-for-Log-Factor-5" class="headerlink" title="Set up for Log Factor 5"></a>Set up for Log Factor 5</h1><pre><code>log4j.appender.socket.layout=org.apache.log4j.PatternLayout
+log4j.appender.socket.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<h1 id="Log-Factor-5-Appender"><a href="#Log-Factor-5-Appender" class="headerlink" title="Log Factor 5 Appender"></a>Log Factor 5 Appender</h1><pre><code>log4j.appender.LF5_APPENDER=org.apache.log4j.lf5.LF5Appender
+log4j.appender.LF5_APPENDER.MaxNumberOfRecords=2000
+</code></pre>
+<h1 id="发送日志到指定邮件"><a href="#发送日志到指定邮件" class="headerlink" title="发送日志到指定邮件"></a>发送日志到指定邮件</h1><pre><code>log4j.appender.mail=org.apache.log4j.net.SMTPAppender
+log4j.appender.mail.Threshold=FATAL
+log4j.appender.mail.BufferSize=10
+log4j.appender.mail.From = xxx@mail.com
+log4j.appender.mail.SMTPHost=mail.com
+log4j.appender.mail.Subject=Log4J Message
+log4j.appender.mail.To= xxx@mail.com
+log4j.appender.mail.layout=org.apache.log4j.PatternLayout
+log4j.appender.mail.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<h1 id="应用于数据库"><a href="#应用于数据库" class="headerlink" title="应用于数据库"></a>应用于数据库</h1><pre><code>log4j.appender.database=org.apache.log4j.jdbc.JDBCAppender
+log4j.appender.database.URL=jdbc:mysql://localhost:3306/test
+log4j.appender.database.driver=com.mysql.jdbc.Driver
+log4j.appender.database.user=root
+log4j.appender.database.password=
+log4j.appender.database.sql=INSERT INTO LOG4J (Message) VALUES(&#39;=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n&#39;)
+log4j.appender.database.layout=org.apache.log4j.PatternLayout
+log4j.appender.database.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<h1 id="自定义Appender"><a href="#自定义Appender" class="headerlink" title="自定义Appender"></a>自定义Appender</h1><pre><code>log4j.appender.im = net.cybercorlin.util.logger.appender.IMAppender
+log4j.appender.im.host = mail.cybercorlin.net
+log4j.appender.im.username = username
+log4j.appender.im.password = password
+log4j.appender.im.recipient = corlin@cybercorlin.net
+log4j.appender.im.layout=org.apache.log4j.PatternLayout
+log4j.appender.im.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %n
+</code></pre>
+<p>log4j的强大功能无可置疑，但实际应用中免不了遇到某个功能需要输出独立的日志文件的情况，怎样才能把所需的内容从原有日志中分离，形成单独的日志文件呢？其实只要在现有的log4j基础上稍加配置即可轻松实现这一功能。</p>
+<p>　　先看一个常见的log4j.properties文件，它是在控制台和myweb.log文件中记录日志：</p>
+<pre><code>log4j.rootLogger=DEBUG, stdout, logfile
+log4j.category.org.springframework=ERROR
+log4j.category.org.apache=INFO
+
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
+
+log4j.appender.logfile=org.apache.log4j.RollingFileAppender
+log4j.appender.logfile.File=$&#123;myweb.root&#125;/WEB-INF/log/myweb.log
+log4j.appender.logfile.MaxFileSize=512KB
+log4j.appender.logfile.MaxBackupIndex=5
+log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logfile.layout.ConversionPattern=%d %p [%c] - %m%n
+</code></pre>
+<p>　　</p>
+<p>如果想对不同的类输出不同的文件(以cn.com.Test为例)，先要在Test.java中定义:</p>
+<p>private static Log logger &#x3D; LogFactory.getLog(Test.class);</p>
+<p>　　然后在log4j.properties中加入:</p>
+<pre><code>log4j.logger.cn.com.Test= DEBUG, test
+log4j.appender.test=org.apache.log4j.FileAppender
+log4j.appender.test.File=$&#123;myweb.root&#125;/WEB-INF/log/test.log
+log4j.appender.test.layout=org.apache.log4j.PatternLayout
+log4j.appender.test.layout.ConversionPattern=%d %p [%c] - %m%n
+</code></pre>
+<p>　　也就是让cn.com.Test中的logger使用log4j.appender.test所做的配置。</p>
+<p>　　但是，如果在同一类中需要输出多个日志文件呢？其实道理是一样的，先在Test.java中定义:</p>
+<pre><code>private static Log logger1 = LogFactory.getLog(&quot;myTest1&quot;);
+private static Log logger2 = LogFactory.getLog(&quot;myTest2&quot;);
+</code></pre>
+<p>　　然后在log4j.properties中加入:</p>
+<pre><code>log4j.logger.myTest1= DEBUG, test1
+log4j.appender.test1=org.apache.log4j.FileAppender
+log4j.appender.test1.File=$&#123;myweb.root&#125;/WEB-INF/log/test1.log
+log4j.appender.test1.layout=org.apache.log4j.PatternLayout
+log4j.appender.test1.layout.ConversionPattern=%d %p [%c] - %m%n
+
+log4j.logger.myTest2= DEBUG, test2
+log4j.appender.test2=org.apache.log4j.FileAppender
+log4j.appender.test2.File=$&#123;myweb.root&#125;/WEB-INF/log/test2.log
+log4j.appender.test2.layout=org.apache.log4j.PatternLayout
+log4j.appender.test2.layout.ConversionPattern=%d %p [%c] - %m%n
+</code></pre>
+<p>　　也就是在用logger时给它一个自定义的名字(如这里的”myTest1”)，然后在log4j.properties中做出相应配置即可。别忘了不同日志要使用不同的logger(如输出到test1.log的要用logger1.info(“abc”))。<br>　　还有一个问题，就是这些自定义的日志默认是同时输出到log4j.rootLogger所配置的日志中的，如何能只让它们输出到自己指定的日志中呢？别急，这里有个开关：</p>
+<pre><code>log4j.additivity.myTest1 = false
+</code></pre>
+<p>　　它用来设置是否同时输出到log4j.rootLogger所配置的日志中，设为false就不会输出到其它地方啦！注意这里的”myTest1”是你在程序中给logger起的那个自定义的名字！</p>
+<p>如果你说，我只是不想同时输出这个日志到log4j.rootLogger所配置的logfile中，stdout里我还想同时输出呢！那也好办，把你的log4j.logger.myTest1 &#x3D; DEBUG, test1改为下式就OK啦！<br>log4j.logger.myTest1&#x3D;DEBUG, test1</p>
+]]></content>
+      <categories>
+        <category>log</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Oracle分区笔记</title>
+    <url>/2016/06/19/Oracle%E5%88%86%E5%8C%BA%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Oracle数据表分区笔记"><a href="#Oracle数据表分区笔记" class="headerlink" title="Oracle数据表分区笔记"></a>Oracle数据表分区笔记</h1><p>When to Partition a Table什么时候需要分区表，官网的2个建议如下：</p>
+<p>（1）Tables greater than 2GB should always be considered for partitioning.</p>
+<p>（2）Tables containing historical data, in which new data is added into the newest partition. A typical example is a historical table where only the current month’s data is updatable and the other 11 months are read only.</p>
+<span id="more"></span>
+<p>在oracle 10g中最多支持：1024k-1个分区：</p>
+<p>Tables can be partitioned into up to 1024K-1 separate partitions</p>
+<hr>
+<p>分区表和分区索引对于10g，基本上可以分为：</p>
+<pre><code>Range（范围）分区
+Hash（散列）分区
+List（列表）分区
+以及组合分区：Range-Hash,Range-List
+</code></pre>
+<p><em>11g在组合分区功能这块有所增强，又推出了range-range,list-range,list-list,list-hash， 这就相当于除hash外三种分区方式的笛卡尔形式都有了</em></p>
+<hr>
+<p>对于索引，需要区分创建的是全局索引，或本地索引：</p>
+<ol>
+<li><p>全局索引(global index)：即可以分区，也可以不分区。即可以建range分区，也可以建hash分区，即可建于分区表，又可创建于非分区表上，就是说，全局索引是完全独立的，因此它也需要我们更多的维护操作。</p>
+</li>
+<li><p>本地索引(local index)：其分区形式与表的分区完全相同，依赖列相同，存储属性也相同。对于本地索引，其索引分区的维护自动进行，就是说你add&#x2F;drop&#x2F;split&#x2F;truncate表的分区时，本地索引会自动维护其索引分区。</p>
+</li>
+</ol>
+<hr>
+<h2 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h2><p>Range分区</p>
+<pre><code>create table tb1 (id number,name varchar2(50))
+
+　　  partition by range(id)(
+
+　　  partition tb1_part_1 values less than (10) tablespace tbspart01,
+
+　　  partition tb1_part_2 values less than (20) tablespace tbspart02,
+
+　　  partition tb1_part_3 values less than (30) tablespace tbspart03,
+
+　　  partition tb1_part_max values less than (maxvalue) tablespace tbspart04
+
+　　  );
+</code></pre>
+<p>Hash分区</p>
+<pre><code>create table test(
+
+transaction_id number primary key,
+
+item_id number(8) not null
+
+)
+
+partition by hash(transaction_id)(
+
+partition part_01 tablespace tablespace01,
+
+partition part_02 tablespace tablespace02,
+
+partition part_03 tablespace tablespace03
+
+);
+</code></pre>
+<p>List分区</p>
+<pre><code>create table custaddr(
+
+id varchar2(15 byte) not null,
+
+areacode varchar2(4 byte)
+)
+
+partition by list (areacode)( 
+partition t_list025 values (&#39;025&#39;), 
+partition t_list372 values (&#39;372&#39;) , 
+partition t_list510 values (&#39;510&#39;),
+partition p_other values (default)
+)
+</code></pre>
+<p>组合分区</p>
+<p>例子：</p>
+<p>range-hash</p>
+<pre><code>create table test
+
+(
+
+transaction_id number primary key,
+
+transaction_date date
+
+)
+
+partition by range(transaction_date) subpartition by hash(transaction_id)
+
+subpartitions 3 store in (tablespace01,tablespace02,tablespace03)
+
+(
+
+partition part_01 values less than(to_date(’2009-01-01’,’yyyy-mm-dd’)),
+
+partition part_02 values less than(to_date(’2010-01-01’,’yyyy-mm-dd’)),
+
+partition part_03 values less than(maxvalue)
+
+);
+</code></pre>
+<p>其他组合类似。</p>
+<h2 id="分区索引相关："><a href="#分区索引相关：" class="headerlink" title="分区索引相关："></a>分区索引相关：</h2><p>创建本地索引（local）：<br>    <code>create index index_name on table_name(carrier,orig,dest) local;</code></p>
+<p>创建全局索引（global）：<br><code>create index index_name on table_name(carrier,orig,dest) global;</code></p>
+<p>删除索引：</p>
+<p><code>drop index index_name;</code></p>
+<p><a href="http://www.blogjava.net/rabbit/archive/2013/01/08/393955.html">参考资料1</a>	<a href="http://blog.csdn.net/hijiankang/article/details/9173877">参考资料2</a></p>
+]]></content>
+      <categories>
+        <category>oracle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Oracle简单命令使用</title>
+    <url>/2016/06/19/Oracle%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="ORACLE简单命令笔记（慢慢增加）"><a href="#ORACLE简单命令笔记（慢慢增加）" class="headerlink" title="ORACLE简单命令笔记（慢慢增加）"></a>ORACLE简单命令笔记（慢慢增加）</h1><p>EXP命令：</p>
+<ol>
+<li><p>将数据库SampleDB完全导出,用户名system 密码manager 导出到E:&#x2F;SampleDB.dmp中<br>  <code>exp system/manager@TestDB file=E:/sampleDB.dmp full=y</code></p>
+</li>
+<li><p>将数据库中system用户与sys用户的表导出<br><code>exp system/manager@TestDB file=E:/sampleDB.dmp  owner=(system,sys)  </code>  </p>
+</li>
+<li><p>将数据库中的表 TableA,TableB 导出<br> <code>exp system/manager@TestDB  file=E:/sampleDB.dmp  tables=(TableA,TableB)</code></p>
+</li>
+<li><p>将数据库中的表tableA中的字段filed1 值为 “王五” 的数据导出<br><code>exp system/manager@TestDB  file=E:/sampleDB.dmp  tables=(tableA)  query=\&quot; where filed1=&#39;王五&#39;\&quot;</code></p>
+<p> <code>exp username/password@ip:port/servername file=F:/test/test.dmp tables=(TABLE1,TABLE2) query=\&quot;where ID=&#39;1&#39;\&quot;</code></p>
+</li>
+<li><p>导出分区表<span id="more"></span><br><code>exp system/password@TestDB grants=N indexes=N log=F:/atpcodatadmp/ifare20.log file=F:/atpcodatadmp/ifare20.dmp tables=(T_IFARE:CUS_PART20,T_IFARE:CUS_PART21)</code></p>
+</li>
+</ol>
+<p>IMP命令：</p>
+<ol>
+<li><p>将备份数据库文件中的数据导入指定的数据库SampleDB 中,如果 SampleDB 已存在该表,则不再导入;<br><code> imp system/manager@TEST  file=E:/sampleDB.dmp  full=y  ignore=y</code></p>
+</li>
+<li><p>将d:&#x2F;daochu.dmp中的表table1 导入<br><code> imp system/manager@TEST  file=E:/sampleDB.dmp  tables=(table1)</code></p>
+</li>
+<li><p>导入一个完整数据库<br><code>imp system/manager file=bible_db log=dible_db full=y ignore=y</code></p>
+</li>
+<li><p>导入一个或一组指定用户所属的全部表、索引和其他对象<br><code>imp system/manager file=seapark log=seapark fromuser=seapark imp   system/manager file=seapark log=seapark fromuser=(seapark,amy,amyc,harold)</code></p>
+</li>
+<li><p>将一个用户所属的数据导入另一个用户<br><code>imp system/manager file=tank log=tank fromuser=seapark touser=seapark_copy  imp system/manager file=tank log=tank fromuser=(seapark,amy)  touser=(seapark1, amy1)</code></p>
+</li>
+<li><p>导入一个表<br> <code>imp system/manager file=tank log=tank fromuser=seapark TABLES=(a,b)</code></p>
+</li>
+<li><p>从多个文件导入<br><code>imp system/manager file=(paycheck_1,paycheck_2,paycheck_3,paycheck_4)  log=paycheck, filesize=1G full=y</code></p>
+</li>
+<li><p>使用参数文件<br>&#96;imp system&#x2F;manager parfile&#x3D;bible_tables.par<br>bible_tables.par参数文件：</p>
+</li>
+</ol>
+<p> #Import the sample tables used for the Oracle8i Database Administrator’s<br>Bible. fromuser&#x3D;seapark touser&#x3D;seapark_copy file&#x3D;seapark log&#x3D;seapark_import&#96;</p>
+<ol start="9">
+<li>增量导入<br><code>imp system./manager inctype= RECTORE FULL=Y  FILE=A</code></li>
+</ol>
+<p>不少情况下要先将表彻底删除，然后导入。<br><a href="http://blog.csdn.net/studyvcmfc/article/details/5679235">参考资源</a></p>
+<p>SQLLOADER命令：</p>
+<pre><code>sqlldr username/password@ip:port/servername control=test.ctl data=test.txt skip=1 log=test.log bad=test-bad.txt discard=test-discard.log
+
+control:控制文件
+data:数据文件
+skip:跳过行数
+log:日志
+bad:错误信息
+discard:抛弃信息
+</code></pre>
+<p>索引相关：</p>
+<p>删除主键约束同时删除主键索引：<br><code>alter table table_name drop constraint constraint_name cascade drop index;</code></p>
+<p>IMP</p>
+<h2 id="关键字-说明（默认）-关键字-说明（默认）"><a href="#关键字-说明（默认）-关键字-说明（默认）" class="headerlink" title="关键字    说明（默认）          关键字        说明（默认）"></a>关键字    说明（默认）          关键字        说明（默认）</h2><pre><code>USERID 用户名/口令 FULL   导入整个文件 (N)
+BUFFER 数据缓冲区大小   FROMUSER   所有人用户名列表
+FILE   输入文件 (EXPDAT.DMP)  TOUSER 用户名列表
+SHOW   只列出文件内容 (N) TABLES表名列表
+IGNORE 忽略创建错误 (N)  RECORDLENGTHIO 记录的长度
+GRANTS导入权限 (Y) INCTYPE增量导入类型
+INDEXES 导入索引 (Y)COMMIT 提交数组插入 (N)
+ROWS  导入数据行 (Y)  PARFILE参数文件名
+LOG屏幕输出的日志文件 CONSTRAINTS导入限制 (Y)
+DESTROY  覆盖表空间数据文件 (N)
+INDEXFILE将表/索引信息写入指定的文件
+SKIP_UNUSABLE_INDEXES跳过不可用索引的维护 (N)
+FEEDBACK 每 x 行显示进度 (0)
+TOID_NOVALIDATE  跳过指定类型 ID 的验证
+FILESIZE 每个转储文件的最大大小
+STATISTICS   始终导入预计算的统计信息
+RESUMABLE遇到与空格有关的错误时挂起 (N)
+RESUMABLE_NAME   用来标识可恢复语句的文本字符串
+RESUMABLE_TIMEOUTRESUMABLE 的等待时间
+COMPILE  编译过程, 程序包和函数 (Y)
+
+下列关键字仅用于可传输的表空间
+TRANSPORT_TABLESPACE 导入可传输的表空间元数据 (N)
+TABLESPACES 将要传输到数据库的表空间
+DATAFILES 将要传输到数据库的数据文件
+TTS_OWNERS 拥有可传输表空间集中数据的用户
+</code></pre>
+<p>EXP</p>
+<h2 id="关键字-说明-默认-关键字-说明-默认"><a href="#关键字-说明-默认-关键字-说明-默认" class="headerlink" title="关键字    说明(默认)          关键字        说明(默认)"></a>关键字    说明(默认)          关键字        说明(默认)</h2><pre><code>USERID 用户名/口令 FULL   导出整个文件 (N)
+BUFFER 数据缓冲区大小   OWNER   所有者用户名列表
+FILE 输出文件 (EXPDAT.DMP)TABLES 表名称列表
+COMPRESS 导入到一个区 (Y) RECORDLENGTH IO 记录的长度
+GRANTS导出权限 (Y) INCTYPE增量导出类型
+INDEXES  导出索引 (Y)   RECORD 跟踪增量导出 (Y)
+DIRECT   直接路径 (N)  TRIGGERS   导出触发器 (Y)
+LOG  屏幕输出的日志文件STATISTICS 分析对象 (ESTIMATE)
+ROWS  导出数据行 (Y)  PARFILE参数文件名
+CONSISTENT 交叉表一致性  CONSTRAINTS导出约束条件 (Y)
+
+FEEDBACK   每 x 行显示进度 (0)
+FILESIZE   每个转储文件的最大大小
+FLASHBACK_SCN  用于回调会话快照的 SCN
+FLASHBACK_TIME 用来获得最接近于指定时间的 SCN 的时间
+QUERY  用来导出表的子集的选择子句
+RESUMABLE  遇到与空格有关的错误时挂起 (N)
+RESUMABLE_NAME 用来标识可恢复语句的文本字符串
+RESUMABLE_TIMEOUT  RESUMABLE 的等待时间
+TTS_FULL_CHECK 对 TTS 执行完全或部分相关性检查
+TABLESPACES要导出的表空间列表
+TRANSPORT_TABLESPACE 导出可传输的表空间元数据 (N)
+TEMPLATE 调用 iAS 模式导出的模板名称
+</code></pre>
+<h2 id="data-dump导入导出"><a href="#data-dump导入导出" class="headerlink" title="data dump导入导出"></a>data dump导入导出</h2><p>使用新的复合分区的表无法再使用exp&#x2F;imp导入导出数据了，需要使用data dump<br>导入导出，即expdp&#x2F;impdp</p>
+<p>使用EXPDP和IMPDP时应该注意的事项：</p>
+<p>EXP和IMP是客户端工具程序，它们既可以在客户端使用，也可以在服务端使用。</p>
+<p>EXPDP和IMPDP是服务端的工具程序，他们只能在ORACLE服务端使用，不能在客户端使用。</p>
+<p>IMP只适用于EXP导出的文件，不适用于EXPDP导出文件；IMPDP只适用于EXPDP导出的文件，而不适用于EXP导出文件。</p>
+<p>expdp或impdp命令时，可暂不指出用户名&#x2F;密码@实例名 as 身份，然后根据提示再输入，如：</p>
+<pre><code>expdp schemas=scott dumpfile=expdp.dmp DIRECTORY=dpdata1;
+</code></pre>
+<p>一、创建逻辑目录，该命令不会在操作系统创建真正的目录，最好以system等管理员创建。</p>
+<pre><code>create directory dpdata1 as &#39;d:\test\dump&#39;;
+</code></pre>
+<p>二、查看管理理员目录（同时查看操作系统是否存在，因为Oracle并不关心该目录是否存在，如果不存在，则出错）</p>
+<pre><code>select * from dba_directories;
+</code></pre>
+<p>三、给scott用户赋予在指定目录的操作权限，最好以system等管理员赋予。</p>
+<pre><code>grant read,write on directory dpdata1 to scott;
+</code></pre>
+<p>四、导出数据</p>
+<p>1)按用户导</p>
+<pre><code>expdp scott/tiger@orcl schemas=scott dumpfile=expdp.dmp DIRECTORY=dpdata1;
+</code></pre>
+<p>2)并行进程parallel</p>
+<pre><code>expdp scott/tiger@orcl directory=dpdata1 dumpfile=scott3.dmp parallel=40 job_name=scott3
+</code></pre>
+<p>3)按表名导</p>
+<pre><code>expdp scott/tiger@orcl TABLES=emp,dept dumpfile=expdp.dmp DIRECTORY=dpdata1;
+</code></pre>
+<p>4)按查询条件导</p>
+<pre><code>expdp scott/tiger@orcl directory=dpdata1 dumpfile=expdp.dmp Tables=emp query=&#39;WHERE deptno=20&#39;;
+</code></pre>
+<p>5)按表空间导</p>
+<pre><code>expdp system/manager DIRECTORY=dpdata1 DUMPFILE=tablespace.dmp TABLESPACES=temp,example;
+</code></pre>
+<p>6)导整个数据库</p>
+<pre><code>expdp system/manager DIRECTORY=dpdata1 DUMPFILE=full.dmp FULL=y;
+</code></pre>
+<p>五、还原数据</p>
+<p>1)导到指定用户下</p>
+<pre><code>impdp scott/tiger DIRECTORY=dpdata1 DUMPFILE=expdp.dmp SCHEMAS=scott;
+</code></pre>
+<p>2)改变表的owner</p>
+<pre><code>impdp system/manager DIRECTORY=dpdata1 DUMPFILE=expdp.dmp TABLES=scott.dept REMAP_SCHEMA=scott:system;
+</code></pre>
+<p>3)导入表空间</p>
+<pre><code>impdp system/manager DIRECTORY=dpdata1 DUMPFILE=tablespace.dmp TABLESPACES=example;
+</code></pre>
+<p>4)导入数据库</p>
+<pre><code>impdp system/manager DIRECTORY=dump_dir DUMPFILE=full.dmp FULL=y;
+</code></pre>
+<p>5)追加数据</p>
+<pre><code>impdp system/manager DIRECTORY=dpdata1 DUMPFILE=expdp.dmp SCHEMAS=system TABLE_EXISTS_ACTION
+</code></pre>
+<p>..<em>to be continued</em></p>
+]]></content>
+      <categories>
+        <category>oracle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>PS磨皮美白第一弹</title>
+    <url>/2016/06/19/PS%E7%A3%A8%E7%9A%AE%E7%BE%8E%E7%99%BD%E7%AC%AC%E4%B8%80%E5%BC%B9/</url>
+    <content><![CDATA[<h1 id="PS磨皮美白第一弹"><a href="#PS磨皮美白第一弹" class="headerlink" title="PS磨皮美白第一弹"></a>PS磨皮美白第一弹</h1><p>步骤：</p>
+<ol>
+<li>按快捷键“CTRL+ALT+(@)”提取高光部分，这时候会出现蚂蚁线，出现后，我们按快捷键”CTRL+SHIFT+I“反选它。</li>
+<li>按快捷键“CTRL+M”用曲线调整它的亮度</li>
+<li>进入图层“通道”，我们复制蓝色通道(鼠标左键拉着蓝色通道到右下角的“创建新通道”处放开鼠标)，得到一个“蓝 副本”</li>
+<li>接下来我们选择“滤镜——其他——高反差保留”，点击“确定”</li>
+<li>选择“图像——应用图像——叠加——确定”，这里可以重复两次的。</li>
+<li>选择“图像——应用图像——颜色减淡——确定“ <span id="more"></span></li>
+<li>接下来我们使用白色的”画笔工具“，把脸部以外的部分(要磨皮皮肤以外的部分)用画笔擦掉</li>
+<li>按反相快捷键“CTRL+I”，然后按着CTRL点击“蓝副本”</li>
+<li>回到“RGB”图像(不要选择蓝副本)</li>
+<li>按快捷键“CTRL+M”出现曲线</li>
+<li>然后我们选择“修补工具”把留下的斑点进行修补，调整痘痘和斑点，修补时注意轮廓问题，还有皮肤相近问题。</li>
+<li>修补后，我们来调一下色相&#x2F;饱和度 然皮肤色度打到你想要的效果</li>
+</ol>
+<p><a href="http://www.3lian.com/" title="三联">三联</a></p>
+]]></content>
+      <categories>
+        <category>photoshop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tomcat日志拆分</title>
+    <url>/2016/11/22/Tomcat%E6%97%A5%E5%BF%97%E6%8B%86%E5%88%86/</url>
+    <content><![CDATA[<h1 id="tomcat-catalina-out日志拆分"><a href="#tomcat-catalina-out日志拆分" class="headerlink" title="tomcat catalina.out日志拆分"></a>tomcat catalina.out日志拆分</h1><h2 id="创建脚本方式："><a href="#创建脚本方式：" class="headerlink" title="创建脚本方式："></a>创建脚本方式：</h2><p>创建sheel脚本</p>
+<pre><code>#!/bin/sh
+y=`date &quot;+%Y&quot;`
+m=`date &quot;+%m&quot;`
+d=`date &quot;+%d&quot;`
+cd /opt/apache-tomcat-6.0.39-1/logs
+cp catalina.out catalina.out.$y$m$d.log
+echo &gt; catalina.out
+exit
+</code></pre>
+<p>linux系统创建定时任务触发脚本</p>
+<p>创建定时任务命令<span id="more"></span></p>
+<p>1.输入crontab -e 编辑crontab服务文件</p>
+<p>例如：</p>
+<pre><code>*/2 * * * * /bin/sh /home/admin/jiaoben/buy/deleteFile.sh 
+5个*的含义是，第一个*是分，第二个*是小时，第三个*是日，第4个*是月，第5个*是周，第6列是命令
+</code></pre>
+<p>2.查看是否创建成功 crontab -l</p>
+<p>3.启动crontab服务</p>
+<p>4.一般启动服务用  <code>/sbin/service crond start </code></p>
+<p>根用户的cron服务可以用 <code>sudo service crond start</code></p>
+<p>查看服务是否已经运行 <code>ps -ax|grep cron</code></p>
+<p>参数说明</p>
+<pre><code>   crontab -u //设定某个用户的cron服务，一般root用户在执行这个命令的时候需要此参数  
+　　crontab -l //列出某个用户cron服务的详细内容
+　　crontab -r //删除没个用户的cron服务
+　　crontab -e //编辑某个用户的cron服务
+　　比如说root查看自己的cron设置:crontab -u root -l
+　　再例如，root想删除fred的cron设置:crontab -u fred -r
+　　在编辑cron服务时，编辑的内容有一些格式和约定，输入:crontab -u root -e
+</code></pre>
+<h2 id="使用rotatelogs拆分-："><a href="#使用rotatelogs拆分-：" class="headerlink" title="使用rotatelogs拆分 ##："></a>使用rotatelogs拆分 ##：</h2><p>修改tomcat，bin目录下catalina.sh文件<br>将如下内容</p>
+<pre><code> #touch &quot;$CATALINA_OUT&quot;
+  if [ &quot;$1&quot; = &quot;-security&quot; ] ; then
+...
+  org.apache.catalina.startup.Bootstrap &quot;$@&quot; start \
+  &gt;&gt; &quot;$CATALINA_OUT&quot; 2&gt;&amp;1 &quot;&amp;&quot;  
+  else
+eval &quot;\&quot;$_RUNJAVA\&quot;&quot; &quot;\&quot;$LOGGING_CONFIG\&quot;&quot; $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+  -Djava.endorsed.dirs=&quot;\&quot;$JAVA_ENDORSED_DIRS\&quot;&quot; -classpath &quot;\&quot;$CLASSPATH\&quot;&quot; \
+  -Dcatalina.base=&quot;\&quot;$CATALINA_BASE\&quot;&quot; \
+  -Dcatalina.home=&quot;\&quot;$CATALINA_HOME\&quot;&quot; \
+  -Djava.io.tmpdir=&quot;\&quot;$CATALINA_TMPDIR\&quot;&quot; \
+  org.apache.catalina.startup.Bootstrap &quot;$@&quot; start 2&gt;&amp;1 \
+  | /usr/sbin/rotatelogs &quot;$CATALINA_BASE&quot;/logs/catalina.%Y-%m-%d.out  200M &gt;&gt; /dev/null &amp;
+  fi
+</code></pre>
+<p>修改为</p>
+<pre><code>  #touch &quot;$CATALINA_OUT&quot;
+  if [ &quot;$1&quot; = &quot;-security&quot; ] ; then
+...
+  org.apache.catalina.startup.Bootstrap &quot;$@&quot; start \
+  &gt;&gt; &quot;$CATALINA_OUT&quot; 2&gt;&amp;1 &quot;&amp;&quot;  
+  else
+eval &quot;\&quot;$_RUNJAVA\&quot;&quot; &quot;\&quot;$LOGGING_CONFIG\&quot;&quot; $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+  -Djava.endorsed.dirs=&quot;\&quot;$JAVA_ENDORSED_DIRS\&quot;&quot; -classpath &quot;\&quot;$CLASSPATH\&quot;&quot; \
+  -Dcatalina.base=&quot;\&quot;$CATALINA_BASE\&quot;&quot; \
+  -Dcatalina.home=&quot;\&quot;$CATALINA_HOME\&quot;&quot; \
+  -Djava.io.tmpdir=&quot;\&quot;$CATALINA_TMPDIR\&quot;&quot; \
+  org.apache.catalina.startup.Bootstrap &quot;$@&quot; start 2&gt;&amp;1 \
+  | /usr/sbin/rotatelogs &quot;$CATALINA_BASE&quot;/logs/catalina.%Y-%m-%d.out  200M &gt;&gt; /dev/null &amp;
+  fi
+</code></pre>
+<p>由于正常情况并不需要使用到-security，所以只需要修改一处。</p>
+<p>rotatelogs语法分析</p>
+<pre><code>rotatelogs [ -l ] logfile [ rotationtime [ offset ]] | [ filesizeM ]
+</code></pre>
+<p>该命令其实只有两种选项用以对日志文件logfile进行操作。且必须选择其中一种方式。</p>
+<p>第一种，rotationtime</p>
+<p>日志文件以秒为单位的时间间隔滚动</p>
+<p>第二种， filesizeM</p>
+<p>指定以filesizeM文件大小滚动，而不是按照时间或时差滚动</p>
+<p>举例：ErrorLog “|bin&#x2F;rotatelogs &#x2F;var&#x2F;logs&#x2F;errorlog.%Y-%m-%d-%H_%M_%S 5M”</p>
+<p>此配置会在错误日志大小增长到5兆字节时滚动该日志，日志文件名后缀会按照如下格式创建：errorlog.YYYY-mm-dd-HH_MM_SS 。</p>
+<p>选项 -l  和offset都是和时区相关的。</p>
+<p>文件名格式：</p>
+<pre><code>errorlog.%Y-%m-%d-%H_%M_%S-------------------errorlog.YYYY-mm-dd-HH_MM_SS
+%A 星期名全称(本地的)
+%a 3个字符的星期名(本地的)
+%B 月份名的全称(本地的)
+%b 3个字符的月份名(本地的)
+%c 日期和时间(本地的)
+%d 2位数的一个月中的日期数
+%H 2位数的小时数(24小时制)
+%I 2位数的小时数(12小时制)
+%j 3位数的一年中的日期数
+%M 2位数的分钟数
+%m 2位数的月份数
+%p am/pm12小时制的上下午(本地的)
+%S 2位数的秒数
+%U 2位数的一年中的星期数(星期天为一周的第一天)
+%W 2位数的一年中的星期数(星期一为一周的第一天)
+%w 1位数的星期几(星期天为一周的第一天)
+%X 时间(本地的)
+%x 日期(本地的)
+%Y 4位数的年份
+%y 2位数的年份
+%Z 时区名
+%% 符号&quot;%&quot;本身
+</code></pre>
+]]></content>
+      <categories>
+        <category>tomcat</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>WIN10 安装vpn client</title>
+    <url>/2015/12/30/WIN10%20%E5%AE%89%E8%A3%85vpn%20client/</url>
+    <content><![CDATA[<h1 id="WIN10-安装vpn-client"><a href="#WIN10-安装vpn-client" class="headerlink" title="WIN10 安装vpn client"></a>WIN10 安装vpn client</h1><ol>
+<li>安装<a href="https://yunpan.cn/cuxu95hVnansn">dneupdate64.rar</a> （提取码：1522）.</li>
+<li>安装完成后，安装vpnclient客户端，<a href="https://yunpan.cn/cuxuIs4t8SSMj">vpnclient-64bit-5.0.07.0440</a> （提取码：c899）</li>
+<li>打开，配置完成后，输入用户名密码，连接报错的话，修改注册表：win+R，输入regedit打开注册表，将HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CVirtA下名称为DisplayName的修改为“Cisco Systems VPN Adapter for 64-bit Windows”。</li>
+<li>重新打开就可以了。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>SYSTEM</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/2015/12/30/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="git的一些自己常使用的简单命令"><a href="#git的一些自己常使用的简单命令" class="headerlink" title="git的一些自己常使用的简单命令"></a>git的一些自己常使用的简单命令</h1><p>设置git的user name和email：</p>
+<pre><code>$ git config --global user.name &quot;xiaoming&quot;
+$ git config --global user.email &quot;xiaoming@gmail.com&quot;
+</code></pre>
+<p>在本机生成秘钥：</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;xiaoming@gmail.com&quot;
+</code></pre>
+<p>按3个回车，这样密码设置的就是空。<br>ssh秘钥在<code>.ssh</code>目录下，可以查看是否已经有了秘钥。<span id="more"></span></p>
+<p>在github上建立好仓库，并且设置完公钥后，对其进行确认的命令：</p>
+<pre><code>ssh -T git@github.com
+</code></pre>
+<p>显示如下则正确：</p>
+<pre><code>Warning: Permanently added &#39;github.com,207.97.227.239&#39; (RSA) to the list of known hosts.
+　　Hi findingsea! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<p>仓库初始化：</p>
+<pre><code>git init
+</code></pre>
+<p>生成快照并存入项目索引：</p>
+<pre><code>git add
+</code></pre>
+<p>项目索引提交：</p>
+<pre><code>git commit
+</code></pre>
+<p>推送本地更新到远程：</p>
+<pre><code>git push origin master
+</code></pre>
+<p>更新远程到本地：</p>
+<pre><code>git pull origin master
+</code></pre>
+<p><em>to be continue…</em></p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2015/12/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>maven pom.xml详解</title>
+    <url>/2016/06/07/maven-pom-xml%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<h1 id="maven-pom-xml详解"><a href="#maven-pom-xml详解" class="headerlink" title="maven pom.xml详解"></a>maven pom.xml详解</h1><p>pom文件内容</p>
+<span id="more"></span>
+<pre><code>&lt;project&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&lt;!--maven2.0必须是这样写，现在是maven2唯一支持的版本--&gt;
+  &lt;!-- 基础设置 --&gt;
+  &lt;groupId&gt;...&lt;/groupId&gt;
+  &lt;artifactId&gt;...&lt;/artifactId&gt;
+  &lt;version&gt;...&lt;/version&gt;
+  &lt;packaging&gt;...&lt;/packaging&gt;
+
+  &lt;name&gt;...&lt;/name&gt;
+
+  &lt;url&gt;...&lt;/url&gt;
+  &lt;dependencies&gt;...&lt;/dependencies&gt;
+  &lt;parent&gt;...&lt;/parent&gt;
+  &lt;dependencyManagement&gt;...&lt;/dependencyManagement&gt;
+  &lt;modules&gt;...&lt;/modules&gt;
+  &lt;properties&gt;...&lt;/properties&gt;
+
+  &lt;!--构建设置 --&gt;
+  &lt;build&gt;...&lt;/build&gt;
+  &lt;reporting&gt;...&lt;/reporting&gt;
+
+  &lt;!-- 更多项目信息 --&gt;
+  &lt;name&gt;...&lt;/name&gt;
+  &lt;description&gt;...&lt;/description&gt;
+  &lt;url&gt;...&lt;/url&gt;
+  &lt;inceptionYear&gt;...&lt;/inceptionYear&gt;
+  &lt;licenses&gt;...&lt;/licenses&gt;
+  &lt;organization&gt;...&lt;/organization&gt;
+  &lt;developers&gt;...&lt;/developers&gt;
+  &lt;contributors&gt;...&lt;/contributors&gt;
+
+  &lt;!-- 环境设置--&gt;
+  &lt;issueManagement&gt;...&lt;/issueManagement&gt;
+  &lt;ciManagement&gt;...&lt;/ciManagement&gt;
+  &lt;mailingLists&gt;...&lt;/mailingLists&gt; 
+  &lt;scm&gt;...&lt;/scm&gt;
+  &lt;prerequisites&gt;...&lt;/prerequisites&gt;
+  &lt;repositories&gt;...&lt;/repositories&gt;
+  &lt;pluginRepositories&gt;...&lt;/pluginRepositories&gt;
+  &lt;distributionManagement&gt;...&lt;/distributionManagement&gt;
+  &lt;profiles&gt;...&lt;/profiles&gt;
+&lt;/project&gt;
+</code></pre>
+<p>基本内容：<br>POM包括了所有的项目信息</p>
+<ol>
+<li>groupId:项目或者组织的唯一标志，并且配置时生成路径也是由此生成，如org.myproject.mojo生成的相对路径为：&#x2F;org&#x2F;myproject&#x2F;mojo</li>
+<li>artifactId:项目的通用名称</li>
+<li>version:项目的版本</li>
+<li>packaging:打包机制，如pom,jar,maven-plugin,ejb,war,ear,rar,par</li>
+<li>name:用户描述项目的名称，无关紧要的东西，可选</li>
+<li>url:应该是只是写明开发团队的网站，无关紧要，可选</li>
+<li>classifer:分类</li>
+</ol>
+<p>其中groupId,artifactId,version,packaging这四项组成了项目的唯一坐标。一般情况下，前面三项就可以组成项目的唯一坐标了。</p>
+]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>用nexus本地搭建maven仓库</title>
+    <url>/2016/06/07/%E7%94%A8nexus%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAmaven%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="用nexus本地搭建maven仓库"><a href="#用nexus本地搭建maven仓库" class="headerlink" title="用nexus本地搭建maven仓库"></a>用nexus本地搭建maven仓库</h1><ol>
+<li><p>下载nexus-2.12.0-01-bundle.zip压缩包，解压安装。</p>
+</li>
+<li><p>在命令行窗口，进入&#x2F;nexus-2.12.0-01目录，输入<code>nexus</code>命令，出现如下(可以将nexus加入环境变量，方便使用)：<br><img src="http://i.imgur.com/T0NKA9P.png"><br>执行 <code>nexus install</code> 将Nexus安装为Windows服务。可将服务启动方式设为手动:<br><img src="http://i.imgur.com/p7prAiK.png"><br>以后通过 <code>nexus start</code> 即可启动Nexus ，通过 <code>nexus stop</code> 退出Nexus：<br><img src="http://i.imgur.com/lIxPIzX.png"></p>
+</li>
+<li><p>在浏览器中访问<code>http://localhost:8081/nexus/</code><br><img src="http://i.imgur.com/Kxq2FhO.png"><br>右上角使用用户名：admin ，密码：admin123 登录。</p>
+</li>
+<li><p>在本地搭建的maven仓库中添加jar包：</p>
+<p><code> mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.1.0 -Dpackaging=jar -Dfile=ojdbc14.jar</code></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+  </entry>
+</search>
