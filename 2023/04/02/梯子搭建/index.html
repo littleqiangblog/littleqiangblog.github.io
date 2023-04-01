@@ -19,23 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.wxqcloud.fun","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="小强的BLOG">
-<meta property="og:url" content="https://blog.wxqcloud.fun/categories/maven/index.html">
+    <meta name="description" content="VPS系统 Debian 9&#x2F;Debian 10  购买域名&#x2F;解析到VPS​	从Namesilo购买域名 一键脚本1wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;mack-a&#x2F;v2ray-agent&#x2F;master&#x2F;install.sh&quot; &amp;&amp; chmod 7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梯子搭建">
+<meta property="og:url" content="https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="小强的BLOG">
+<meta property="og:description" content="VPS系统 Debian 9&#x2F;Debian 10  购买域名&#x2F;解析到VPS​	从Namesilo购买域名 一键脚本1wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;mack-a&#x2F;v2ray-agent&#x2F;master&#x2F;install.sh&quot; &amp;&amp; chmod 7">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-01T17:07:26.000Z">
+<meta property="article:modified_time" content="2023-04-01T17:34:32.147Z">
 <meta property="article:author" content="小强">
+<meta property="article:tag" content="vultr">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://blog.wxqcloud.fun/categories/maven/">
+<link rel="canonical" href="https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/maven/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/","path":"2023/04/02/梯子搭建/","title":"梯子搭建"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: maven | 小强的BLOG</title>
+<title>梯子搭建 | 小强的BLOG</title>
   
 
 
@@ -122,7 +127,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -135,6 +140,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPS%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">VPS系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D-x2F-%E8%A7%A3%E6%9E%90%E5%88%B0VPS"><span class="nav-number">2.</span> <span class="nav-text">购买域名&#x2F;解析到VPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC"><span class="nav-number">3.</span> <span class="nav-text">一键脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85BBR%E5%8A%A0%E9%80%9F"><span class="nav-number">4.</span> <span class="nav-text">安装BBR加速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%B4%A6%E5%8F%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">5.</span> <span class="nav-text">查看账号信息</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -155,12 +161,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -176,70 +182,120 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">maven
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/qiaoba.jpg">
+      <meta itemprop="name" content="小强">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="梯子搭建 | 小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          梯子搭建
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2016</span>
+
+      <time title="创建时间：2023-04-02 01:07:26 / 修改时间：01:34:32" itemprop="dateCreated datePublished" datetime="2023-04-02T01:07:26+08:00">2023-04-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="VPS系统"><a href="#VPS系统" class="headerlink" title="VPS系统"></a>VPS系统</h3><blockquote>
+<p>Debian 9&#x2F;Debian 10</p>
+</blockquote>
+<h3 id="购买域名-x2F-解析到VPS"><a href="#购买域名-x2F-解析到VPS" class="headerlink" title="购买域名&#x2F;解析到VPS"></a>购买域名&#x2F;解析到VPS</h3><p>​	从Namesilo购买域名</p>
+<h3 id="一键脚本"><a href="#一键脚本" class="headerlink" title="一键脚本"></a>一键脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<ol>
+<li>选择任意组合</li>
+<li>选择核心–v2ray-core</li>
+<li>个性化安装</li>
+</ol>
+<h3 id="安装BBR加速"><a href="#安装BBR加速" class="headerlink" title="安装BBR加速"></a>安装BBR加速</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
+<ol>
+<li>   选择安装BBR，DD脚本</li>
+<li>   安装完成后，选择使用BBR+FQ加速</li>
+<li>   重启服务器</li>
+</ol>
+<h3 id="查看账号信息"><a href="#查看账号信息" class="headerlink" title="查看账号信息"></a>查看账号信息</h3><p>再次执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2016-06-07T22:24:00+08:00"
-              content="2016-06-07">
-          06-07
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2016/06/07/%E7%94%A8nexus%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAmaven%E4%BB%93%E5%BA%93/" itemprop="url">
-            <span itemprop="name">用nexus本地搭建maven仓库</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vultr/" rel="tag"># vultr</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/03/28/Hexo%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE/" rel="prev" title="Hexo分类和标签">
+                  <i class="fa fa-chevron-left"></i> Hexo分类和标签
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2016-06-07T22:16:49+08:00"
-              content="2016-06-07">
-          06-07
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2016/06/07/maven-pom-xml%E8%AF%A6%E8%A7%A3/" itemprop="url">
-            <span itemprop="name">maven pom.xml详解</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-    </div>
-  </div>
-  
-  
-  
+
 
 </div>
   </main>

@@ -21,8 +21,11 @@
 <h2 id="SingleInstance-启动模式："><a href="#SingleInstance-启动模式：" class="headerlink" title="SingleInstance 启动模式："></a>SingleInstance 启动模式：</h2><p>如果启动模式为SingleInstance的activity，会在一个新的任务栈中创建此activity的实例。</p>
 ]]></content>
       <categories>
-        <category>Android</category>
+        <category>学习</category>
       </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo使用</title>
@@ -133,10 +136,10 @@
 <p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>教程</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -166,10 +169,10 @@
 
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>教程</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -218,7 +221,6 @@
      每天7：50以root 身份执行/etc/cron.daily目录中的所有可执行文件
      50   7       *             *     *     root     run-parts     /etc/cron.daily   [ 注：run-parts参数表示，执行后面目录中的所有可执行文件。 ]
 </code></pre>
-<p> </p>
 <p> 新增调度任务</p>
 <p>     新增调度任务可用两种方法：</p>
 <pre><code> 1)、在命令行输入: crontab -e 然后添加相应的任务，wq存盘退出。
@@ -256,8 +258,11 @@
 <p>原文地址：<a href="http://qa.taobao.com/?p=9189">http://qa.taobao.com/?p=9189</a></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>学习</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>Log4j笔记</title>
@@ -458,20 +463,15 @@ log4j.appender.im.layout.ConversionPattern=[%-5p] %d(%r) --&gt; [%t] %l: %m %x %
 <pre><code>log4j.rootLogger=DEBUG, stdout, logfile
 log4j.category.org.springframework=ERROR
 log4j.category.org.apache=INFO
-
-
-log4j.appender.stdout=org.apache.log4j.ConsoleAppender
-log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
-log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
-
-log4j.appender.logfile=org.apache.log4j.RollingFileAppender
+</code></pre>
+<p>​<br>    log4j.appender.stdout&#x3D;org.apache.log4j.ConsoleAppender<br>    log4j.appender.stdout.layout&#x3D;org.apache.log4j.PatternLayout<br>    log4j.appender.stdout.layout.ConversionPattern&#x3D;%d %p [%c] - %m%n</p>
+<pre><code>log4j.appender.logfile=org.apache.log4j.RollingFileAppender
 log4j.appender.logfile.File=$&#123;myweb.root&#125;/WEB-INF/log/myweb.log
 log4j.appender.logfile.MaxFileSize=512KB
 log4j.appender.logfile.MaxBackupIndex=5
 log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
 log4j.appender.logfile.layout.ConversionPattern=%d %p [%c] - %m%n
 </code></pre>
-<p>　　</p>
 <p>如果想对不同的类输出不同的文件(以cn.com.Test为例)，先要在Test.java中定义:</p>
 <p>private static Log logger &#x3D; LogFactory.getLog(Test.class);</p>
 <p>　　然后在log4j.properties中加入:</p>
@@ -506,8 +506,11 @@ log4j.appender.test2.layout.ConversionPattern=%d %p [%c] - %m%n
 <p>如果你说，我只是不想同时输出这个日志到log4j.rootLogger所配置的logfile中，stdout里我还想同时输出呢！那也好办，把你的log4j.logger.myTest1 &#x3D; DEBUG, test1改为下式就OK啦！<br>log4j.logger.myTest1&#x3D;DEBUG, test1</p>
 ]]></content>
       <categories>
-        <category>log</category>
+        <category>学习</category>
       </categories>
+      <tags>
+        <tag>log</tag>
+      </tags>
   </entry>
   <entry>
     <title>Oracle分区笔记</title>
@@ -619,15 +622,18 @@ partition part_03 values less than(maxvalue)
 <p><a href="http://www.blogjava.net/rabbit/archive/2013/01/08/393955.html">参考资料1</a>	<a href="http://blog.csdn.net/hijiankang/article/details/9173877">参考资料2</a></p>
 ]]></content>
       <categories>
-        <category>oracle</category>
+        <category>学习</category>
       </categories>
+      <tags>
+        <tag>oracle</tag>
+      </tags>
   </entry>
   <entry>
     <title>Oracle简单命令使用</title>
     <url>/2016/06/19/Oracle%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="ORACLE简单命令笔记（慢慢增加）"><a href="#ORACLE简单命令笔记（慢慢增加）" class="headerlink" title="ORACLE简单命令笔记（慢慢增加）"></a>ORACLE简单命令笔记（慢慢增加）</h1><p>EXP命令：</p>
 <ol>
-<li><p>将数据库SampleDB完全导出,用户名system 密码manager 导出到E:&#x2F;SampleDB.dmp中<br>  <code>exp system/manager@TestDB file=E:/sampleDB.dmp full=y</code></p>
+<li><p>将数据库SampleDB完全导出,用户名system 密码manager 导出到E:&#x2F;SampleDB.dmp中<br><code>exp system/manager@TestDB file=E:/sampleDB.dmp full=y</code></p>
 </li>
 <li><p>将数据库中system用户与sys用户的表导出<br><code>exp system/manager@TestDB file=E:/sampleDB.dmp  owner=(system,sys)  </code>  </p>
 </li>
@@ -783,8 +789,11 @@ TEMPLATE 调用 iAS 模式导出的模板名称
 <p>..<em>to be continued</em></p>
 ]]></content>
       <categories>
-        <category>oracle</category>
+        <category>学习</category>
       </categories>
+      <tags>
+        <tag>oracle</tag>
+      </tags>
   </entry>
   <entry>
     <title>PS磨皮美白第一弹</title>
@@ -807,8 +816,11 @@ TEMPLATE 调用 iAS 模式导出的模板名称
 <p><a href="http://www.3lian.com/" title="三联">三联</a></p>
 ]]></content>
       <categories>
-        <category>photoshop</category>
+        <category>摄影</category>
       </categories>
+      <tags>
+        <tag>ps</tag>
+      </tags>
   </entry>
   <entry>
     <title>Tomcat日志拆分</title>
@@ -846,19 +858,19 @@ exit
 </code></pre>
 <h2 id="使用rotatelogs拆分-："><a href="#使用rotatelogs拆分-：" class="headerlink" title="使用rotatelogs拆分 ##："></a>使用rotatelogs拆分 ##：</h2><p>修改tomcat，bin目录下catalina.sh文件<br>将如下内容</p>
 <pre><code> #touch &quot;$CATALINA_OUT&quot;
-  if [ &quot;$1&quot; = &quot;-security&quot; ] ; then
-...
-  org.apache.catalina.startup.Bootstrap &quot;$@&quot; start \
-  &gt;&gt; &quot;$CATALINA_OUT&quot; 2&gt;&amp;1 &quot;&amp;&quot;  
-  else
-eval &quot;\&quot;$_RUNJAVA\&quot;&quot; &quot;\&quot;$LOGGING_CONFIG\&quot;&quot; $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
-  -Djava.endorsed.dirs=&quot;\&quot;$JAVA_ENDORSED_DIRS\&quot;&quot; -classpath &quot;\&quot;$CLASSPATH\&quot;&quot; \
-  -Dcatalina.base=&quot;\&quot;$CATALINA_BASE\&quot;&quot; \
-  -Dcatalina.home=&quot;\&quot;$CATALINA_HOME\&quot;&quot; \
-  -Djava.io.tmpdir=&quot;\&quot;$CATALINA_TMPDIR\&quot;&quot; \
-  org.apache.catalina.startup.Bootstrap &quot;$@&quot; start 2&gt;&amp;1 \
-  | /usr/sbin/rotatelogs &quot;$CATALINA_BASE&quot;/logs/catalina.%Y-%m-%d.out  200M &gt;&gt; /dev/null &amp;
-  fi
+   if [ &quot;$1&quot; = &quot;-security&quot; ] ; then
+ ...
+   org.apache.catalina.startup.Bootstrap &quot;$@&quot; start \
+   &gt;&gt; &quot;$CATALINA_OUT&quot; 2&gt;&amp;1 &quot;&amp;&quot;  
+   else
+ eval &quot;\&quot;$_RUNJAVA\&quot;&quot; &quot;\&quot;$LOGGING_CONFIG\&quot;&quot; $LOGGING_MANAGER $JAVA_OPTS $CATALINA_OPTS \
+   -Djava.endorsed.dirs=&quot;\&quot;$JAVA_ENDORSED_DIRS\&quot;&quot; -classpath &quot;\&quot;$CLASSPATH\&quot;&quot; \
+   -Dcatalina.base=&quot;\&quot;$CATALINA_BASE\&quot;&quot; \
+   -Dcatalina.home=&quot;\&quot;$CATALINA_HOME\&quot;&quot; \
+   -Djava.io.tmpdir=&quot;\&quot;$CATALINA_TMPDIR\&quot;&quot; \
+   org.apache.catalina.startup.Bootstrap &quot;$@&quot; start 2&gt;&amp;1 \
+   | /usr/sbin/rotatelogs &quot;$CATALINA_BASE&quot;/logs/catalina.%Y-%m-%d.out  200M &gt;&gt; /dev/null &amp;
+   fi
 </code></pre>
 <p>修改为</p>
 <pre><code>  #touch &quot;$CATALINA_OUT&quot;
@@ -915,8 +927,11 @@ eval &quot;\&quot;$_RUNJAVA\&quot;&quot; &quot;\&quot;$LOGGING_CONFIG\&quot;&quo
 </code></pre>
 ]]></content>
       <categories>
-        <category>tomcat</category>
+        <category>学习</category>
       </categories>
+      <tags>
+        <tag>tomcat</tag>
+      </tags>
   </entry>
   <entry>
     <title>WIN10 安装vpn client</title>
@@ -929,8 +944,11 @@ eval &quot;\&quot;$_RUNJAVA\&quot;&quot; &quot;\&quot;$LOGGING_CONFIG\&quot;&quo
 </ol>
 ]]></content>
       <categories>
-        <category>SYSTEM</category>
+        <category>教程</category>
       </categories>
+      <tags>
+        <tag>system</tag>
+      </tags>
   </entry>
   <entry>
     <title>git常用命令</title>
@@ -968,34 +986,11 @@ $ git config --global user.email &quot;xiaoming@gmail.com&quot;
 <p><em>to be continue…</em></p>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>学习</category>
       </categories>
       <tags>
-        <tag>工具</tag>
+        <tag>git</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2015/12/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><span id="more"></span>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
   </entry>
   <entry>
     <title>maven pom.xml详解</title>
@@ -1059,8 +1054,42 @@ $ git config --global user.email &quot;xiaoming@gmail.com&quot;
 <p>其中groupId,artifactId,version,packaging这四项组成了项目的唯一坐标。一般情况下，前面三项就可以组成项目的唯一坐标了。</p>
 ]]></content>
       <categories>
-        <category>maven</category>
+        <category>学习</category>
       </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>梯子搭建</title>
+    <url>/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h3 id="VPS系统"><a href="#VPS系统" class="headerlink" title="VPS系统"></a>VPS系统</h3><blockquote>
+<p>Debian 9&#x2F;Debian 10</p>
+</blockquote>
+<h3 id="购买域名-x2F-解析到VPS"><a href="#购买域名-x2F-解析到VPS" class="headerlink" title="购买域名&#x2F;解析到VPS"></a>购买域名&#x2F;解析到VPS</h3><p>​	从Namesilo购买域名</p>
+<h3 id="一键脚本"><a href="#一键脚本" class="headerlink" title="一键脚本"></a>一键脚本</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<ol>
+<li>选择任意组合</li>
+<li>选择核心–v2ray-core</li>
+<li>个性化安装</li>
+</ol>
+<h3 id="安装BBR加速"><a href="#安装BBR加速" class="headerlink" title="安装BBR加速"></a>安装BBR加速</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
+<ol>
+<li>   选择安装BBR，DD脚本</li>
+<li>   安装完成后，选择使用BBR+FQ加速</li>
+<li>   重启服务器</li>
+</ol>
+<h3 id="查看账号信息"><a href="#查看账号信息" class="headerlink" title="查看账号信息"></a>查看账号信息</h3><p>再次执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>vultr</tag>
+      </tags>
   </entry>
   <entry>
     <title>用nexus本地搭建maven仓库</title>
@@ -1078,7 +1107,10 @@ $ git config --global user.email &quot;xiaoming@gmail.com&quot;
 </ol>
 ]]></content>
       <categories>
-        <category>maven</category>
+        <category>教程</category>
       </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
   </entry>
 </search>
