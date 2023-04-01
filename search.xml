@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Activity 的几种启动模式</title>
-    <url>/2016/01/02/Activity-%E7%9A%84%E5%87%A0%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p>Activity 的启动模式</p>
-<p>android:launchMode</p>
-<pre><code>  &lt;application
-    android:name=&quot;&quot;
-    android:label=&quot;&quot;
-    android:launchMode=&quot;standard&quot;&gt;
-    ...
-&lt;/application&gt;
-</code></pre>
-<span id="more"></span>
-<h2 id="standard-启动模式（默认的）"><a href="#standard-启动模式（默认的）" class="headerlink" title="standard 启动模式（默认的）:"></a>standard 启动模式（默认的）:</h2><p>就是最普通的，在当前栈中先进后出</p>
-<h2 id="SingleTop-启动模式："><a href="#SingleTop-启动模式：" class="headerlink" title="SingleTop 启动模式："></a>SingleTop 启动模式：</h2><p>如果当前栈中的启动模式为SingleTop的activity在当前的栈顶，则再启动是，不会改变当前activity实例。<br>如果没有在栈顶，就会新创建一个activity实例在栈顶。</p>
-<p>始终保持模式为SingleTop的activity在当前栈顶部。</p>
-<h2 id="SingleTask-启动模式："><a href="#SingleTask-启动模式：" class="headerlink" title="SingleTask 启动模式："></a>SingleTask 启动模式：</h2><p>当启动这个activity时会把它上面的activity都弹出。</p>
-<p>在当前栈中每个模式为SingleTask的activity有且只有一个实例</p>
-<h2 id="SingleInstance-启动模式："><a href="#SingleInstance-启动模式：" class="headerlink" title="SingleInstance 启动模式："></a>SingleInstance 启动模式：</h2><p>如果启动模式为SingleInstance的activity，会在一个新的任务栈中创建此activity的实例。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo使用</title>
     <url>/2023/03/28/Hexo%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="hexo常用指令"><a href="#hexo常用指令" class="headerlink" title="hexo常用指令"></a>hexo常用指令</h1><h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">init</span></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
@@ -140,6 +113,33 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Activity 的几种启动模式</title>
+    <url>/2016/01/02/Activity-%E7%9A%84%E5%87%A0%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p>Activity 的启动模式</p>
+<p>android:launchMode</p>
+<pre><code>  &lt;application
+    android:name=&quot;&quot;
+    android:label=&quot;&quot;
+    android:launchMode=&quot;standard&quot;&gt;
+    ...
+&lt;/application&gt;
+</code></pre>
+<span id="more"></span>
+<h2 id="standard-启动模式（默认的）"><a href="#standard-启动模式（默认的）" class="headerlink" title="standard 启动模式（默认的）:"></a>standard 启动模式（默认的）:</h2><p>就是最普通的，在当前栈中先进后出</p>
+<h2 id="SingleTop-启动模式："><a href="#SingleTop-启动模式：" class="headerlink" title="SingleTop 启动模式："></a>SingleTop 启动模式：</h2><p>如果当前栈中的启动模式为SingleTop的activity在当前的栈顶，则再启动是，不会改变当前activity实例。<br>如果没有在栈顶，就会新创建一个activity实例在栈顶。</p>
+<p>始终保持模式为SingleTop的activity在当前栈顶部。</p>
+<h2 id="SingleTask-启动模式："><a href="#SingleTask-启动模式：" class="headerlink" title="SingleTask 启动模式："></a>SingleTask 启动模式：</h2><p>当启动这个activity时会把它上面的activity都弹出。</p>
+<p>在当前栈中每个模式为SingleTask的activity有且只有一个实例</p>
+<h2 id="SingleInstance-启动模式："><a href="#SingleInstance-启动模式：" class="headerlink" title="SingleInstance 启动模式："></a>SingleInstance 启动模式：</h2><p>如果启动模式为SingleInstance的activity，会在一个新的任务栈中创建此activity的实例。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -629,6 +629,33 @@ partition part_03 values less than(maxvalue)
       </tags>
   </entry>
   <entry>
+    <title>PS磨皮美白第一弹</title>
+    <url>/2016/06/19/PS%E7%A3%A8%E7%9A%AE%E7%BE%8E%E7%99%BD%E7%AC%AC%E4%B8%80%E5%BC%B9/</url>
+    <content><![CDATA[<h1 id="PS磨皮美白第一弹"><a href="#PS磨皮美白第一弹" class="headerlink" title="PS磨皮美白第一弹"></a>PS磨皮美白第一弹</h1><p>步骤：</p>
+<ol>
+<li>按快捷键“CTRL+ALT+(@)”提取高光部分，这时候会出现蚂蚁线，出现后，我们按快捷键”CTRL+SHIFT+I“反选它。</li>
+<li>按快捷键“CTRL+M”用曲线调整它的亮度</li>
+<li>进入图层“通道”，我们复制蓝色通道(鼠标左键拉着蓝色通道到右下角的“创建新通道”处放开鼠标)，得到一个“蓝 副本”</li>
+<li>接下来我们选择“滤镜——其他——高反差保留”，点击“确定”</li>
+<li>选择“图像——应用图像——叠加——确定”，这里可以重复两次的。</li>
+<li>选择“图像——应用图像——颜色减淡——确定“ <span id="more"></span></li>
+<li>接下来我们使用白色的”画笔工具“，把脸部以外的部分(要磨皮皮肤以外的部分)用画笔擦掉</li>
+<li>按反相快捷键“CTRL+I”，然后按着CTRL点击“蓝副本”</li>
+<li>回到“RGB”图像(不要选择蓝副本)</li>
+<li>按快捷键“CTRL+M”出现曲线</li>
+<li>然后我们选择“修补工具”把留下的斑点进行修补，调整痘痘和斑点，修补时注意轮廓问题，还有皮肤相近问题。</li>
+<li>修补后，我们来调一下色相&#x2F;饱和度 然皮肤色度打到你想要的效果</li>
+</ol>
+<p><a href="http://www.3lian.com/" title="三联">三联</a></p>
+]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>ps</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Oracle简单命令使用</title>
     <url>/2016/06/19/Oracle%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="ORACLE简单命令笔记（慢慢增加）"><a href="#ORACLE简单命令笔记（慢慢增加）" class="headerlink" title="ORACLE简单命令笔记（慢慢增加）"></a>ORACLE简单命令笔记（慢慢增加）</h1><p>EXP命令：</p>
@@ -793,33 +820,6 @@ TEMPLATE 调用 iAS 模式导出的模板名称
       </categories>
       <tags>
         <tag>oracle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PS磨皮美白第一弹</title>
-    <url>/2016/06/19/PS%E7%A3%A8%E7%9A%AE%E7%BE%8E%E7%99%BD%E7%AC%AC%E4%B8%80%E5%BC%B9/</url>
-    <content><![CDATA[<h1 id="PS磨皮美白第一弹"><a href="#PS磨皮美白第一弹" class="headerlink" title="PS磨皮美白第一弹"></a>PS磨皮美白第一弹</h1><p>步骤：</p>
-<ol>
-<li>按快捷键“CTRL+ALT+(@)”提取高光部分，这时候会出现蚂蚁线，出现后，我们按快捷键”CTRL+SHIFT+I“反选它。</li>
-<li>按快捷键“CTRL+M”用曲线调整它的亮度</li>
-<li>进入图层“通道”，我们复制蓝色通道(鼠标左键拉着蓝色通道到右下角的“创建新通道”处放开鼠标)，得到一个“蓝 副本”</li>
-<li>接下来我们选择“滤镜——其他——高反差保留”，点击“确定”</li>
-<li>选择“图像——应用图像——叠加——确定”，这里可以重复两次的。</li>
-<li>选择“图像——应用图像——颜色减淡——确定“ <span id="more"></span></li>
-<li>接下来我们使用白色的”画笔工具“，把脸部以外的部分(要磨皮皮肤以外的部分)用画笔擦掉</li>
-<li>按反相快捷键“CTRL+I”，然后按着CTRL点击“蓝副本”</li>
-<li>回到“RGB”图像(不要选择蓝副本)</li>
-<li>按快捷键“CTRL+M”出现曲线</li>
-<li>然后我们选择“修补工具”把留下的斑点进行修补，调整痘痘和斑点，修补时注意轮廓问题，还有皮肤相近问题。</li>
-<li>修补后，我们来调一下色相&#x2F;饱和度 然皮肤色度打到你想要的效果</li>
-</ol>
-<p><a href="http://www.3lian.com/" title="三联">三联</a></p>
-]]></content>
-      <categories>
-        <category>摄影</category>
-      </categories>
-      <tags>
-        <tag>ps</tag>
       </tags>
   </entry>
   <entry>
@@ -1061,6 +1061,28 @@ $ git config --global user.email &quot;xiaoming@gmail.com&quot;
       </tags>
   </entry>
   <entry>
+    <title>用nexus本地搭建maven仓库</title>
+    <url>/2016/06/07/%E7%94%A8nexus%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAmaven%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="用nexus本地搭建maven仓库"><a href="#用nexus本地搭建maven仓库" class="headerlink" title="用nexus本地搭建maven仓库"></a>用nexus本地搭建maven仓库</h1><ol>
+<li><p>下载nexus-2.12.0-01-bundle.zip压缩包，解压安装。</p>
+</li>
+<li><p>在命令行窗口，进入&#x2F;nexus-2.12.0-01目录，输入<code>nexus</code>命令，出现如下(可以将nexus加入环境变量，方便使用)：<br><img src="http://i.imgur.com/T0NKA9P.png"><br>执行 <code>nexus install</code> 将Nexus安装为Windows服务。可将服务启动方式设为手动:<br><img src="http://i.imgur.com/p7prAiK.png"><br>以后通过 <code>nexus start</code> 即可启动Nexus ，通过 <code>nexus stop</code> 退出Nexus：<br><img src="http://i.imgur.com/lIxPIzX.png"></p>
+</li>
+<li><p>在浏览器中访问<code>http://localhost:8081/nexus/</code><br><img src="http://i.imgur.com/Kxq2FhO.png"><br>右上角使用用户名：admin ，密码：admin123 登录。</p>
+</li>
+<li><p>在本地搭建的maven仓库中添加jar包：</p>
+<p><code> mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.1.0 -Dpackaging=jar -Dfile=ojdbc14.jar</code></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>梯子搭建</title>
     <url>/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<h3 id="VPS系统"><a href="#VPS系统" class="headerlink" title="VPS系统"></a>VPS系统</h3><blockquote>
@@ -1089,28 +1111,6 @@ $ git config --global user.email &quot;xiaoming@gmail.com&quot;
       </categories>
       <tags>
         <tag>vultr</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用nexus本地搭建maven仓库</title>
-    <url>/2016/06/07/%E7%94%A8nexus%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAmaven%E4%BB%93%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="用nexus本地搭建maven仓库"><a href="#用nexus本地搭建maven仓库" class="headerlink" title="用nexus本地搭建maven仓库"></a>用nexus本地搭建maven仓库</h1><ol>
-<li><p>下载nexus-2.12.0-01-bundle.zip压缩包，解压安装。</p>
-</li>
-<li><p>在命令行窗口，进入&#x2F;nexus-2.12.0-01目录，输入<code>nexus</code>命令，出现如下(可以将nexus加入环境变量，方便使用)：<br><img src="http://i.imgur.com/T0NKA9P.png"><br>执行 <code>nexus install</code> 将Nexus安装为Windows服务。可将服务启动方式设为手动:<br><img src="http://i.imgur.com/p7prAiK.png"><br>以后通过 <code>nexus start</code> 即可启动Nexus ，通过 <code>nexus stop</code> 退出Nexus：<br><img src="http://i.imgur.com/lIxPIzX.png"></p>
-</li>
-<li><p>在浏览器中访问<code>http://localhost:8081/nexus/</code><br><img src="http://i.imgur.com/Kxq2FhO.png"><br>右上角使用用户名：admin ，密码：admin123 登录。</p>
-</li>
-<li><p>在本地搭建的maven仓库中添加jar包：</p>
-<p><code> mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.1.0 -Dpackaging=jar -Dfile=ojdbc14.jar</code></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>maven</tag>
       </tags>
   </entry>
 </search>
