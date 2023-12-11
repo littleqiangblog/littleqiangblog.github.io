@@ -113,7 +113,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -141,6 +141,101 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2016/06/07/%E7%94%A8nexus%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAmaven%E4%BB%93%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小强">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/06/07/%E7%94%A8nexus%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAmaven%E4%BB%93%E5%BA%93/" class="post-title-link" itemprop="url">用nexus本地搭建maven仓库</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-06-07 22:24:00" itemprop="dateCreated datePublished" datetime="2016-06-07T22:24:00+08:00">2016-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-10 23:42:03" itemprop="dateModified" datetime="2023-12-10T23:42:03+08:00">2023-12-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="用nexus本地搭建maven仓库"><a href="#用nexus本地搭建maven仓库" class="headerlink" title="用nexus本地搭建maven仓库"></a>用nexus本地搭建maven仓库</h1><ol>
+<li><p>下载nexus-2.12.0-01-bundle.zip压缩包，解压安装。</p>
+</li>
+<li><p>在命令行窗口，进入&#x2F;nexus-2.12.0-01目录，输入<code>nexus</code>命令，出现如下(可以将nexus加入环境变量，方便使用)：<br><img src="http://i.imgur.com/T0NKA9P.png"><br>执行 <code>nexus install</code> 将Nexus安装为Windows服务。可将服务启动方式设为手动:<br><img src="http://i.imgur.com/p7prAiK.png"><br>以后通过 <code>nexus start</code> 即可启动Nexus ，通过 <code>nexus stop</code> 退出Nexus：<br><img src="http://i.imgur.com/lIxPIzX.png"></p>
+</li>
+<li><p>在浏览器中访问<code>http://localhost:8081/nexus/</code><br><img src="http://i.imgur.com/Kxq2FhO.png"><br>右上角使用用户名：admin ，密码：admin123 登录。</p>
+</li>
+<li><p>在本地搭建的maven仓库中添加jar包：</p>
+<p><code> mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.1.0 -Dpackaging=jar -Dfile=ojdbc14.jar</code></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
