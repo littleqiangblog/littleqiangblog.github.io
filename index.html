@@ -113,18 +113,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -141,6 +141,433 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/12/18/Docker%E5%AE%89%E8%A3%85Mysql8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小强">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/18/Docker%E5%AE%89%E8%A3%85Mysql8/" class="post-title-link" itemprop="url">Docker安装Mysql8</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-12-18 00:00:17 / 修改时间：00:10:35" itemprop="dateCreated datePublished" datetime="2023-12-18T00:00:17+08:00">2023-12-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="1-下载Mysql8镜像"><a href="#1-下载Mysql8镜像" class="headerlink" title="1.下载Mysql8镜像"></a>1.下载Mysql8镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:8.0.27</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-启动Mysql测试容器"><a href="#2-启动Mysql测试容器" class="headerlink" title="2.启动Mysql测试容器"></a>2.启动Mysql测试容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name mysqltest -p 3366:3306 --privileged=true -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.27</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-创建本地挂载目录"><a href="#3-创建本地挂载目录" class="headerlink" title="3.创建本地挂载目录 "></a>3.创建本地挂载目录
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/18/Docker%E5%AE%89%E8%A3%85Mysql8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/12/17/Docker%E5%AE%89%E8%A3%85Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小强">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/17/Docker%E5%AE%89%E8%A3%85Redis/" class="post-title-link" itemprop="url">Docker安装Redis</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-17 23:50:00" itemprop="dateCreated datePublished" datetime="2023-12-17T23:50:00+08:00">2023-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-18 00:12:27" itemprop="dateModified" datetime="2023-12-18T00:12:27+08:00">2023-12-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="1-查找docker的redis版本"><a href="#1-查找docker的redis版本" class="headerlink" title="1.查找docker的redis版本"></a>1.查找docker的redis版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search redis</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-拉取redis镜像"><a href="#2-拉取redis镜像" class="headerlink" title="2.拉取redis镜像"></a>2.拉取redis镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis	#默认安装最新版</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-创建挂载本地目录"><a href="#3-创建挂载本地目录" class="headerlink" title="3.创建挂载本地目录"></a>3.创建挂载本地目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/redis/data	#本地数据目录</span><br><span class="line">cd /home/redis</span><br><span class="line">touch redis.conf	#创建本地的conf文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-下载配置文件"><a href="#4-下载配置文件" class="headerlink" title="4.下载配置文件"></a>4.下载配置文件
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/17/Docker%E5%AE%89%E8%A3%85Redis/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/12/17/%E5%AE%89%E8%A3%85Portainer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小强">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/17/%E5%AE%89%E8%A3%85Portainer/" class="post-title-link" itemprop="url">安装Portainer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-17 23:47:04" itemprop="dateCreated datePublished" datetime="2023-12-17T23:47:04+08:00">2023-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-18 00:07:13" itemprop="dateModified" datetime="2023-12-18T00:07:13+08:00">2023-12-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>设置目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume create portainer_data</span><br></pre></td></tr></table></figure>
+
+<p>运行容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8000:8000 -p 9443:9443 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行 <a target="_blank" rel="noopener" href="http://localhost:9000/">http://localhost:9000</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/12/14/Docker%E5%AE%89%E8%A3%85Rabbitmq/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小强">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/14/Docker%E5%AE%89%E8%A3%85Rabbitmq/" class="post-title-link" itemprop="url">Docker安装Rabbitmq</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-14 15:00:12" itemprop="dateCreated datePublished" datetime="2023-12-14T15:00:12+08:00">2023-12-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-18 00:12:01" itemprop="dateModified" datetime="2023-12-18T00:12:01+08:00">2023-12-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="1-启动容器命令"><a href="#1-启动容器命令" class="headerlink" title="1.启动容器命令"></a>1.启动容器命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --hostname my-rabbit --name rabbit -p 15672:15672 -p 5672:5672 rabbitmq</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>hostname：指定容器的主机名，可以用来在容器中代替ip进行通信</p>
+<p>例如 ：my-rabbit:5672</p>
+</blockquote>
+<h3 id="2-配置web端管理页面"><a href="#2-配置web端管理页面" class="headerlink" title="2.配置web端管理页面 "></a>2.配置web端管理页面
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/14/Docker%E5%AE%89%E8%A3%85Rabbitmq/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/12/12/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA%E5%8F%8A%E6%8E%88%E6%9D%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小强">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 小强的BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/12/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA%E5%8F%8A%E6%8E%88%E6%9D%83/" class="post-title-link" itemprop="url">Mysql数据库用户创建及授权</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-12 14:28:29" itemprop="dateCreated datePublished" datetime="2023-12-12T14:28:29+08:00">2023-12-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-15 22:35:02" itemprop="dateModified" datetime="2023-12-15T22:35:02+08:00">2023-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="1-删除用户"><a href="#1-删除用户" class="headerlink" title="1.删除用户"></a>1.删除用户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop user &#x27;用户名&#x27;@&#x27;主机名&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-创建新用户"><a href="#2-创建新用户" class="headerlink" title="2.创建新用户"></a>2.创建新用户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create user &#x27;用户名&#x27;@&#x27;允许那个主机链接&#x27; identified by &#x27;密码&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-授权"><a href="#3-授权" class="headerlink" title="3.授权"></a>3.授权</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &#x27;用户名&#x27;@&#x27;主机名&#x27; with grant option;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>主机名可以设置为 % 表示不限</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -186,7 +613,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-12 00:00:17" itemprop="dateModified" datetime="2023-12-12T00:00:17+08:00">2023-12-12</time>
+      <time title="修改时间：2023-12-18 00:11:26" itemprop="dateModified" datetime="2023-12-18T00:11:26+08:00">2023-12-18</time>
     </span>
 
   
@@ -203,20 +630,15 @@
 
 <h3 id="2-启动nginx容器"><a href="#2-启动nginx容器" class="headerlink" title="2.启动nginx容器"></a>2.启动nginx容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 nginx</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-自定义挂载目录"><a href="#3-自定义挂载目录" class="headerlink" title="3.自定义挂载目录"></a>3.自定义挂载目录</h3><p>需要将部分配置文件复制到挂载目录</p>
-<p>查看nginx容器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost nginx]# docker ps -a |grep nginx</span><br><span class="line">b1548e2f707a        nginx                           &quot;/docker-entrypoin...&quot;   About a minute ago   Up About a minute   0.0.0.0:80-&gt;80/tcp                           nginx</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker cp nginx:/etc/nginx/nginx.conf /home/nginx/	#将容器内的nginx.conf 文件拷贝到宿主机的/home/nginx目录下</span><br><span class="line">docker cp nginx:/etc/nginx/conf.d/default.conf /home/nginx/conf/	#将容器内的nginx.conf 文件拷贝到宿主机的/home/nginx/conf目录下</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-删除原nginx容器"><a href="#4-删除原nginx容器" class="headerlink" title="4.删除原nginx容器"></a>4.删除原nginx容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop nginx</span><br><span class="line">docker rm nginx</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-重新创建容器执行命令"><a href="#5-重新创建容器执行命令" class="headerlink" title="5.重新创建容器执行命令"></a>5.重新创建容器执行命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -e TZ=&quot;Asia/Shanghai&quot; -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/log:/var/log/nginx -v /home/nginx/html:/usr/share/nginx/html -v /home/nginx/conf:/etc/nginx/conf.d --privileged=true nginx</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>–privileged&#x3D;true 容器内部对挂载目录拥有读写等权限</p>
-</blockquote>
-
+<h3 id="3-自定义挂载目录"><a href="#3-自定义挂载目录" class="headerlink" title="3.自定义挂载目录"></a>3.自定义挂载目录
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/12/11/Docker%E5%AE%89%E8%A3%85Nginx/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -359,7 +781,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-10 23:42:03" itemprop="dateModified" datetime="2023-12-10T23:42:03+08:00">2023-12-10</time>
+      <time title="修改时间：2023-12-18 00:15:34" itemprop="dateModified" datetime="2023-12-18T00:15:34+08:00">2023-12-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -581,512 +1003,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/03/28/Hexo%E4%BD%BF%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2016/11/22/Linux-crontab%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小强">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/11/22/Linux-crontab%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Linux crontab命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-11-22 20:12:18" itemprop="dateCreated datePublished" datetime="2016-11-22T20:12:18+08:00">2016-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-10 23:42:03" itemprop="dateModified" datetime="2023-12-10T23:42:03+08:00">2023-12-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Linux-crontab命令"><a href="#Linux-crontab命令" class="headerlink" title="Linux crontab命令"></a>Linux crontab命令</h1><p> crontab命令选项:</p>
-<pre><code>     -u指定一个用户
-     -l列出某个用户的任务计划
-     -r删除某个用户的任务
-     -e编辑某个用户的任务
-</code></pre>
-<p> cron文件语法:</p>
-<pre><code>      分     小时    日       月       星期     命令
-      0-59   0-23   1-31   1-12     0-6     command     (取值范围,0表示周日一般一行对应一个任务)
-     记住几个特殊符号的含义:
-         “*”代表取值范围内的数字,
-         “/”代表”每”,
-         “-”代表从某个数字到某个数字,
-         “,”分开几个离散的数字
-</code></pre>
-<p> 任务调度设置文件的写法
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/11/22/Linux-crontab%E5%91%BD%E4%BB%A4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2016/11/22/Tomcat%E6%97%A5%E5%BF%97%E6%8B%86%E5%88%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小强">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/11/22/Tomcat%E6%97%A5%E5%BF%97%E6%8B%86%E5%88%86/" class="post-title-link" itemprop="url">Tomcat日志拆分</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-11-22 20:07:42" itemprop="dateCreated datePublished" datetime="2016-11-22T20:07:42+08:00">2016-11-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-10 23:42:03" itemprop="dateModified" datetime="2023-12-10T23:42:03+08:00">2023-12-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="tomcat-catalina-out日志拆分"><a href="#tomcat-catalina-out日志拆分" class="headerlink" title="tomcat catalina.out日志拆分"></a>tomcat catalina.out日志拆分</h1><h2 id="创建脚本方式："><a href="#创建脚本方式：" class="headerlink" title="创建脚本方式："></a>创建脚本方式：</h2><p>创建sheel脚本</p>
-<pre><code>#!/bin/sh
-y=`date &quot;+%Y&quot;`
-m=`date &quot;+%m&quot;`
-d=`date &quot;+%d&quot;`
-cd /opt/apache-tomcat-6.0.39-1/logs
-cp catalina.out catalina.out.$y$m$d.log
-echo &gt; catalina.out
-exit
-</code></pre>
-<p>linux系统创建定时任务触发脚本</p>
-<p>创建定时任务命令
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/11/22/Tomcat%E6%97%A5%E5%BF%97%E6%8B%86%E5%88%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2016/06/19/PS%E7%A3%A8%E7%9A%AE%E7%BE%8E%E7%99%BD%E7%AC%AC%E4%B8%80%E5%BC%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小强">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/06/19/PS%E7%A3%A8%E7%9A%AE%E7%BE%8E%E7%99%BD%E7%AC%AC%E4%B8%80%E5%BC%B9/" class="post-title-link" itemprop="url">PS磨皮美白第一弹</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-06-19 15:12:53" itemprop="dateCreated datePublished" datetime="2016-06-19T15:12:53+08:00">2016-06-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-10 23:42:03" itemprop="dateModified" datetime="2023-12-10T23:42:03+08:00">2023-12-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">摄影</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="PS磨皮美白第一弹"><a href="#PS磨皮美白第一弹" class="headerlink" title="PS磨皮美白第一弹"></a>PS磨皮美白第一弹</h1><p>步骤：</p>
-<ol>
-<li>按快捷键“CTRL+ALT+(@)”提取高光部分，这时候会出现蚂蚁线，出现后，我们按快捷键”CTRL+SHIFT+I“反选它。</li>
-<li>按快捷键“CTRL+M”用曲线调整它的亮度</li>
-<li>进入图层“通道”，我们复制蓝色通道(鼠标左键拉着蓝色通道到右下角的“创建新通道”处放开鼠标)，得到一个“蓝 副本”</li>
-<li>接下来我们选择“滤镜——其他——高反差保留”，点击“确定”</li>
-<li>选择“图像——应用图像——叠加——确定”，这里可以重复两次的。</li>
-<li>选择“图像——应用图像——颜色减淡——确定“
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/06/19/PS%E7%A3%A8%E7%9A%AE%E7%BE%8E%E7%99%BD%E7%AC%AC%E4%B8%80%E5%BC%B9/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2016/06/19/Oracle%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小强">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/06/19/Oracle%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Oracle简单命令使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-06-19 15:12:30" itemprop="dateCreated datePublished" datetime="2016-06-19T15:12:30+08:00">2016-06-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-10 23:42:03" itemprop="dateModified" datetime="2023-12-10T23:42:03+08:00">2023-12-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="ORACLE简单命令笔记（慢慢增加）"><a href="#ORACLE简单命令笔记（慢慢增加）" class="headerlink" title="ORACLE简单命令笔记（慢慢增加）"></a>ORACLE简单命令笔记（慢慢增加）</h1><p>EXP命令：</p>
-<ol>
-<li><p>将数据库SampleDB完全导出,用户名system 密码manager 导出到E:&#x2F;SampleDB.dmp中<br><code>exp system/manager@TestDB file=E:/sampleDB.dmp full=y</code></p>
-</li>
-<li><p>将数据库中system用户与sys用户的表导出<br><code>exp system/manager@TestDB file=E:/sampleDB.dmp  owner=(system,sys)  </code>  </p>
-</li>
-<li><p>将数据库中的表 TableA,TableB 导出<br> <code>exp system/manager@TestDB  file=E:/sampleDB.dmp  tables=(TableA,TableB)</code></p>
-</li>
-<li><p>将数据库中的表tableA中的字段filed1 值为 “王五” 的数据导出<br><code>exp system/manager@TestDB  file=E:/sampleDB.dmp  tables=(tableA)  query=\&quot; where filed1=&#39;王五&#39;\&quot;</code></p>
-<p> <code>exp username/password@ip:port/servername file=F:/test/test.dmp tables=(TABLE1,TABLE2) query=\&quot;where ID=&#39;1&#39;\&quot;</code></p>
-</li>
-<li><p>导出分区表
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/06/19/Oracle%E7%AE%80%E5%8D%95%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2016/06/19/Oracle%E5%88%86%E5%8C%BA%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="小强">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 小强的BLOG">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/06/19/Oracle%E5%88%86%E5%8C%BA%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Oracle分区笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2016-06-19 15:12:10" itemprop="dateCreated datePublished" datetime="2016-06-19T15:12:10+08:00">2016-06-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-10 23:42:03" itemprop="dateModified" datetime="2023-12-10T23:42:03+08:00">2023-12-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Oracle数据表分区笔记"><a href="#Oracle数据表分区笔记" class="headerlink" title="Oracle数据表分区笔记"></a>Oracle数据表分区笔记</h1><p>When to Partition a Table什么时候需要分区表，官网的2个建议如下：</p>
-<p>（1）Tables greater than 2GB should always be considered for partitioning.</p>
-<p>（2）Tables containing historical data, in which new data is added into the newest partition. A typical example is a historical table where only the current month’s data is updatable and the other 11 months are read only.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/06/19/Oracle%E5%88%86%E5%8C%BA%E7%AC%94%E8%AE%B0/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
