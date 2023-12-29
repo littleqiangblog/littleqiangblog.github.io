@@ -19,28 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.wxqcloud.fun","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="VPS系统 Debian 9&#x2F;Debian 10  购买域名&#x2F;解析到VPS​	从Namesilo购买域名 一键脚本1wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;mack-a&#x2F;v2ray-agent&#x2F;master&#x2F;install.sh&quot; &amp;&amp; chmod 7">
+    <meta name="description" content="应用服务和nginx2服务都配置了跨域，会导致一下问题，’Access-Control-Allow-Origin’重复  1Access to fetch at &#x27;https:&#x2F;&#x2F;gpt-core.wxqcloud.fun&#x2F;api&#x2F;v1&#x2F;chat&#x2F;completions&#x27; from origin &#x27;https:&#x2F;&#x2F;gpt.wxqcloud.fun&#x27; ha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梯子搭建">
-<meta property="og:url" content="https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="Nginx跨域冲突问题">
+<meta property="og:url" content="https://blog.wxqcloud.fun/2023/12/29/Nginx%E8%B7%A8%E5%9F%9F%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="小强的BLOG">
-<meta property="og:description" content="VPS系统 Debian 9&#x2F;Debian 10  购买域名&#x2F;解析到VPS​	从Namesilo购买域名 一键脚本1wget -N --no-check-certificate &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;mack-a&#x2F;v2ray-agent&#x2F;master&#x2F;install.sh&quot; &amp;&amp; chmod 7">
+<meta property="og:description" content="应用服务和nginx2服务都配置了跨域，会导致一下问题，’Access-Control-Allow-Origin’重复  1Access to fetch at &#x27;https:&#x2F;&#x2F;gpt-core.wxqcloud.fun&#x2F;api&#x2F;v1&#x2F;chat&#x2F;completions&#x27; from origin &#x27;https:&#x2F;&#x2F;gpt.wxqcloud.fun&#x27; ha">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-01T17:07:26.000Z">
-<meta property="article:modified_time" content="2023-12-17T16:15:34.516Z">
+<meta property="og:image" content="https://blog.wxqcloud.fun/uploads/nginx%E8%AF%B7%E6%B1%82.png">
+<meta property="article:published_time" content="2023-12-29T09:08:53.000Z">
+<meta property="article:modified_time" content="2023-12-29T09:27:59.242Z">
 <meta property="article:author" content="小强">
-<meta property="article:tag" content="Vultr">
+<meta property="article:tag" content="Nginx">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.wxqcloud.fun/uploads/nginx%E8%AF%B7%E6%B1%82.png">
 
 
-<link rel="canonical" href="https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/">
+<link rel="canonical" href="https://blog.wxqcloud.fun/2023/12/29/Nginx%E8%B7%A8%E5%9F%9F%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/","path":"2023/04/02/梯子搭建/","title":"梯子搭建"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.wxqcloud.fun/2023/12/29/Nginx%E8%B7%A8%E5%9F%9F%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/","path":"2023/12/29/Nginx跨域冲突问题/","title":"Nginx跨域冲突问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>梯子搭建 | 小强的BLOG</title>
+<title>Nginx跨域冲突问题 | 小强的BLOG</title>
   
 
 
@@ -93,7 +95,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -106,7 +108,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPS%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">VPS系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D-%E8%A7%A3%E6%9E%90%E5%88%B0VPS"><span class="nav-number">2.</span> <span class="nav-text">购买域名&#x2F;解析到VPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC"><span class="nav-number">3.</span> <span class="nav-text">一键脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85BBR%E5%8A%A0%E9%80%9F"><span class="nav-number">4.</span> <span class="nav-text">安装BBR加速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%B4%A6%E5%8F%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">5.</span> <span class="nav-text">查看账号信息</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -157,7 +158,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/04/02/%E6%A2%AF%E5%AD%90%E6%90%AD%E5%BB%BA/">
+    <link itemprop="mainEntityOfPage" href="https://blog.wxqcloud.fun/2023/12/29/Nginx%E8%B7%A8%E5%9F%9F%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -170,12 +171,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="梯子搭建 | 小强的BLOG">
+      <meta itemprop="name" content="Nginx跨域冲突问题 | 小强的BLOG">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          梯子搭建
+          Nginx跨域冲突问题
         </h1>
 
         <div class="post-meta-container">
@@ -185,24 +186,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-04-02 01:07:26" itemprop="dateCreated datePublished" datetime="2023-04-02T01:07:26+08:00">2023-04-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-12-18 00:15:34" itemprop="dateModified" datetime="2023-12-18T00:15:34+08:00">2023-12-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
-        </span>
+      <time title="创建时间：2023-12-29 17:08:53 / 修改时间：17:27:59" itemprop="dateCreated datePublished" datetime="2023-12-29T17:08:53+08:00">2023-12-29</time>
     </span>
 
   
@@ -214,25 +200,14 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="VPS系统"><a href="#VPS系统" class="headerlink" title="VPS系统"></a>VPS系统</h3><blockquote>
-<p>Debian 9&#x2F;Debian 10</p>
+    <div class="post-body" itemprop="articleBody"><p><img src="/../uploads/nginx%E8%AF%B7%E6%B1%82.png" alt="nginx请求"></p>
+<blockquote>
+<p>应用服务和nginx2服务都配置了跨域，会导致一下问题，’Access-Control-Allow-Origin’重复</p>
 </blockquote>
-<h3 id="购买域名-解析到VPS"><a href="#购买域名-解析到VPS" class="headerlink" title="购买域名&#x2F;解析到VPS"></a>购买域名&#x2F;解析到VPS</h3><p>​	从Namesilo购买域名</p>
-<h3 id="一键脚本"><a href="#一键脚本" class="headerlink" title="一键脚本"></a>一键脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<ol>
-<li>选择任意组合</li>
-<li>选择核心–v2ray-core</li>
-<li>个性化安装</li>
-</ol>
-<h3 id="安装BBR加速"><a href="#安装BBR加速" class="headerlink" title="安装BBR加速"></a>安装BBR加速</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
-<ol>
-<li>   选择安装BBR，DD脚本</li>
-<li>   安装完成后，选择使用BBR+FQ加速</li>
-<li>   重启服务器</li>
-</ol>
-<h3 id="查看账号信息"><a href="#查看账号信息" class="headerlink" title="查看账号信息"></a>查看账号信息</h3><p>再次执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Access</span> to fetch at <span class="string">&#x27;https://gpt-core.wxqcloud.fun/api/v1/chat/completions&#x27;</span> <span class="keyword">from</span> origin <span class="string">&#x27;https://gpt.wxqcloud.fun&#x27;</span> has been blocked by <span class="variable constant_">CORS</span> <span class="attr">policy</span>: <span class="title class_">Response</span> to preflight request doesn<span class="string">&#x27;t pass access control check: The &#x27;</span><span class="title class_">Access</span>-<span class="title class_">Control</span>-<span class="title class_">Allow</span>-<span class="title class_">Origin</span><span class="string">&#x27; header contains multiple values &#x27;</span><span class="attr">https</span>:<span class="comment">//gpt.wxqcloud.fun, https://gpt.wxqcloud.fun&#x27;, but only one is allowed. Have the server send the header with a valid value, or, if an opaque response serves your needs, set the request&#x27;s mode to &#x27;no-cors&#x27; to fetch the resource with CORS disabled.</span></span><br></pre></td></tr></table></figure>
+
+<p>可以修改nginx服务2的配置 增加proxy_hide_header</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">proxy_hide_header</span> Access-Control-Allow-Origin;</span><br><span class="line"><span class="attribute">proxy_hide_header</span> Access-Control-Allow-Methods;</span><br><span class="line"><span class="attribute">proxy_hide_header</span> Access-Control-Allow-Credentials;</span><br><span class="line">       <span class="attribute">add_header</span> <span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span> <span class="variable">$http_origin</span>;</span><br><span class="line">       <span class="attribute">add_header</span> <span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span> <span class="string">&#x27;true&#x27;</span>;</span><br><span class="line">       <span class="attribute">add_header</span> <span class="string">&#x27;Access-Control-Allow-Methods&#x27;</span> <span class="string">&#x27;GET, POST, OPTIONS&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -243,21 +218,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Vultr/" rel="tag"># Vultr</a>
+              <a href="/tags/Nginx/" rel="tag"># Nginx</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/28/Hexo%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE/" rel="prev" title="Hexo分类和标签">
-                  <i class="fa fa-angle-left"></i> Hexo分类和标签
+                <a href="/2023/12/21/Docker%E5%AE%89%E8%A3%85Rocketmq/" rel="prev" title="Docker安装Rocketmq">
+                  <i class="fa fa-angle-left"></i> Docker安装Rocketmq
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/12/11/Centos7%E5%AE%89%E8%A3%85Docker/" rel="next" title="Centos7安装Docker">
-                  Centos7安装Docker <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
